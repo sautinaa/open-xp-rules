@@ -1,0 +1,4 @@
+Description: 'Пользователь очистил журнал один из журналов System, Install, Application. При выбора параметра сохранить и очистить журнал сохраниться в object.value'
+EventDescriptions:
+    - LocalizationId: 'corrname_Clearing_eventlog'
+      EventDescription: 'Пользователь {subject.account.domain}\{subject.account.name} очистил журнал {object.name}'
