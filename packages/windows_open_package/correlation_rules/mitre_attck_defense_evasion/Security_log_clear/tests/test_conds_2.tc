@@ -1,0 +1,4 @@
+# Вайтлистинг
+table_list default
+table_list {"Common_whitelist_auto": [{"rule": "Security_log_clear", "specific_value": ""}]}
+expect not {"correlation_name": "Security_log_clear"}
