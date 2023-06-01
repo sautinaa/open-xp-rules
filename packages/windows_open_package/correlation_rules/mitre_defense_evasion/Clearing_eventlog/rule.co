@@ -9,7 +9,6 @@ event Clear_event:
         and msgid == "104"
         and action == "clean"
         and object == "log"
-        # and object.value == ""
     }
 
 rule Clearing_eventlog: Clear_event
@@ -59,7 +58,7 @@ emit {
     $correlation_type = "incident"
 
     $subject = "account"
-    $object = "rule"
+    $object = "log"
     $status = "success"
 
     $importance = "medium"
