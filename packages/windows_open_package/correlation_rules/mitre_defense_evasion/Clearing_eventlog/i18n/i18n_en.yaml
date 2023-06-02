@@ -1,4 +1,4 @@
-Description: 'The user cleared the log one of the System, Install, Application logs. When the save and clear log option is selected, the log is saved in object.value'
+Description: 'The user cleared one of the Windows event logs.'
 EventDescriptions:
     - LocalizationId: 'corrname_Clearing_eventlog'
-      EventDescription: 'User {subject.account.domain}\{subject.account.name} clean {object.name}'
+      EventDescription: 'User {subject.account.domain}\{subject.account.name} clean {object.name} log at host {event_src.host}'
