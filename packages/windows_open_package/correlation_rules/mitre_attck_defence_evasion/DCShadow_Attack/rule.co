@@ -50,9 +50,9 @@ emit {
     $object = "account"
     $status = "success"
 
-    $category.generic = "Attacks & Recon"
-    $category.high = "Attack"
-    $category.low = "Post Compromise"
+    $category.generic = "Attack"
+    $category.high = "Defense Evasion"
+    $category.low = "Rogue Domain Controller"
 
     $incident.severity = "high"
     $incident.category = "UserCompromising"
