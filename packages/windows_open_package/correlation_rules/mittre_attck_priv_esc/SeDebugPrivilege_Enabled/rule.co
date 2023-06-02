@@ -8,7 +8,7 @@ event AdjustTokenPrivileges:
         find_substr(lower(object.value),"sedebugprivilege") != null
     }
 
-rule SeDebugPrivilege_enabled: AdjustTokenPrivileges
+rule SeDebugPrivilege_Enabled: AdjustTokenPrivileges
 
     init {
         $labels = "w_auto"
@@ -46,7 +46,7 @@ rule SeDebugPrivilege_enabled: AdjustTokenPrivileges
     }
 
 emit {
-    $correlation_name = "SeDebugPrivilege_enabled"
+    $correlation_name = "SeDebugPrivilege_Enabled"
     $correlation_type = "incident"
 
     $importance = "medium"
@@ -61,10 +61,9 @@ emit {
     $category.low = "Adjust Token Privileges"
 
     $incident.aggregation.key = join([$correlation_name, lower($event_src.host), lower($subject.account.id)], "|")
-        $incident.aggregation.timeout = 2h
+    $incident.aggregation.timeout = 2h
 
     $incident.severity = "medium"
     $incident.category = "Undefined"
     $incident.type = "SoftwareSuspiciousActivity"
-
 }

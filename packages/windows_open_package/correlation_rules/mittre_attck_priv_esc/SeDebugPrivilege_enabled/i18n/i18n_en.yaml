@@ -1,4 +1,0 @@
-Description: 'SeDebugPrivilege enabled by process'
-EventDescriptions:
-    - LocalizationId: 'corrname_SeDebugPrivilege_enabled'
-      EventDescription: '{object.value} enabled by process {subject.process.name}'
