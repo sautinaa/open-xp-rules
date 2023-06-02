@@ -13,10 +13,6 @@ event Security_clear:
 
 rule Security_log_clear: Security_clear
 
-    init {
-        $labels = "w_auto"
-    }
-
     on Security_clear {
         $subject.account.name = subject.account.name
         $subject.account.domain = subject.account.domain
@@ -28,7 +24,10 @@ rule Security_log_clear: Security_clear
         $subject.process.name = subject.process.name
         $subject.process.path = subject.process.path
         $subject.process.fullpath = subject.process.fullpath
-        
+
+        $object = object
+        $object.name = object.name
+
         $object.account.session_id = object.account.session_id
         $object.account.name = object.account.name
         $object.account.domain = object.account.domain
@@ -84,26 +83,26 @@ rule Security_log_clear: Security_clear
         $event_src.category = event_src.category
 
         # other
-        $alert.key = 
-        $alert.context = 
+        $alert.key = $object.name
+        $alert.context = $subject.account.domain + "\\" + $subject.account.name + " " + action + $object.name
         $reason = reason
     }
 
 emit {
-    $correlation_type = ""
-    $importance = ""
+    $correlation_type = "incident"
+    $importance = "medium"
 
     $subject = "account"
-    $action = "clear"
+    $action = "clean"
     $object = "log"
     $status = "success"
 
     $category.generic = "Attack"
-    $category.high = ""
-    $category.low = ""
+    $category.high = "Defense Evasion"
+    $category.low = "Indicator Removal"
 
     $incident.aggregation.key = join([$correlation_name, lower($event_src.host), lower($subject.account.id)], "|")
-    $incident.severity = "high"
+    $incident.severity = "medium"
     $incident.category = "Undefined"
     $incident.aggregation.timeout = 2h
 }
