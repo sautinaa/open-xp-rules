@@ -4,6 +4,7 @@ event Security_clear:
     filter {
         filter::NotFromCorrelator()
 
+        and lower(event_src.title) == "windows"
         and msgid == "1102"
         and lower(event_src.subsys) == "security"
         and action == "clean"
