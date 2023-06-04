@@ -1,0 +1,4 @@
+Description: 'Правило обнаружило попытку атаки "password spraying" с использованием протокола kerberos'
+EventDescriptions:
+    - LocalizationId: 'corrname_kerberos_pwd_spraying'
+      EventDescription: 'Правило обнаруживает неудачные попытки  пре-аутентификации в системе {src.host} с несколькими учетными записями домена {subject.account.name} с использованием протокола Kerberos'
