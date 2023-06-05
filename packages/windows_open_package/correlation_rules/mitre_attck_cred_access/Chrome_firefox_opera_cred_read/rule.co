@@ -6,9 +6,7 @@ event Firefox_Login_Data_Files_Read:
         filter::NotFromCorrelator()
         and event_src.title == "windows"
         and msgid == "4663"
-        and regex(lower(object.fullpath), "appdata\\\\roaming\\\\mozilla\\\\firefox\\\\profiles\\\\[a-z.0-9]+\\\\key3.db|" + 
-                                          "appdata\\\\roaming\\\\mozilla\\\\firefox\\\\profiles\\\\[a-z.0-9]+\\\\key4.db|" +
-                                          "appdata\\\\roaming\\\\mozilla\\\\firefox\\\\profiles\\\\[a-z.0-9]+\\\\logins.json", 0) != null
+        and regex(lower(object.fullpath), "appdata\\\\roaming\\\\mozilla\\\\firefox\\\\profiles\\\\[a-z.0-9]+\\\\(key(3|4).db|logins.json)", 0) != null
         and datafield5 == "0x1" # AccessMask - ReadData
         and regex(lower(subject.process.fullpath), "c:\\\\program files\\\\|c:\\\\program files (x86)\\\\|c:\\\\windows\\\\system32\\\\|c:\\\\windows\\\\syswow64", 0) == null # Added to avoid large amount of FP
     }
@@ -44,10 +42,6 @@ rule Chrome_firefox_opera_cred_read: Firefox_Login_Data_Files_Read or Opera_Logi
     }
 
     on Firefox_Login_Data_Files_Read {
-        $subject = "account"
-        $action = "read"
-        $object = "file"
-        $status = "success"
 
         $event_src.ip = event_src.ip
         $event_src.hostname = event_src.hostname
@@ -98,10 +92,6 @@ rule Chrome_firefox_opera_cred_read: Firefox_Login_Data_Files_Read or Opera_Logi
     }
 
     on Opera_Login_Data_Files_Read {
-        $subject = "account"
-        $action = "read"
-        $object = "file"
-        $status = "success"
 
         $event_src.ip = event_src.ip
         $event_src.hostname = event_src.hostname
@@ -151,11 +141,7 @@ rule Chrome_firefox_opera_cred_read: Firefox_Login_Data_Files_Read or Opera_Logi
         $alert.context = subject.account.domain + "\\" + subject.account.name + " read '" + object.fullpath + "' on " + event_src.hostname
     }
 
-    on Chrome_Login_Data_Read {
-        $subject = "account"
-        $action = "read"
-        $object = "file"
-        $status = "success"
+    on Chrome_Login_Data_Read {    
 
         $event_src.ip = event_src.ip
         $event_src.hostname = event_src.hostname
@@ -206,6 +192,16 @@ rule Chrome_firefox_opera_cred_read: Firefox_Login_Data_Files_Read or Opera_Logi
     }
 
 emit {
+
+    $subject = "account"
+    $action = "read"
+    $object = "file"
+    $status = "success"
+
     $correlation_type = "incident"
     $importance = "medium"
+
+    $category.generic = "Attack"
+    $category.high = "Credential Access"
+    $category.low = "Credentials from Password Stores"
 }
