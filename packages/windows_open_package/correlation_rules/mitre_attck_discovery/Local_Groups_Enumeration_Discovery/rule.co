@@ -63,12 +63,16 @@ rule Local_Groups_Enumeration_Discovery: Local_Group_Enumerate
     }
 
 emit {
-    $correlation_type = "incident"
-    $importance = "medium"
+    $correlation_type = "event"
+    $importance = "low"
 
     $subject = "account"
     $action = "read"
     $object = "user_group"
     $status = "success"
+
+    $category.generic = "Attack"
+    $category.high = "Discovery"
+    $category.low = "Account Discovery"
 }
 
