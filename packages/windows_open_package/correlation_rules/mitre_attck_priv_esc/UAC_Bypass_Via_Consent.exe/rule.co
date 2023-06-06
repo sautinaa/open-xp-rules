@@ -109,7 +109,7 @@ emit {
     $category.high = "Privilege Escalation"
     $category.low = "Bypass User Account Control"
 
-    $incident.aggregation.key = join([$correlation_name, $event_src.host, $subject.process.name], "|")
+    $incident.aggregation.key = join([$correlation_name, $event_src.host, $subject.process.name, $object.process.fullpath], "|")
     $incident.severity = $importance
     $incident.category = "Undefined"
     $incident.aggregation.timeout = 2h
