@@ -1,0 +1,37 @@
+event Windows_event_5156:
+    key:
+        event_src.host
+    filter {
+        filter::NotFromCorrelator()
+        and (
+            (event_src.title == "windows" and msgid == "5156")
+            and
+            (src.port == 3389 and (in_subnet(dst.ip, "127.0.0.0/8") or in_list(["::1"], dst.ip))
+            or 
+            (dst.port == 3389 and (in_subnet(src.ip, "127.0.0.0/8") or in_list(["::1"], src.ip))))
+        )
+    }
+
+rule RDP_Tunneling_via_SSH_5156: Windows_event_5156
+
+    on Windows_event_5156 {
+        $src.host = src.host
+        $src.ip = src.ip
+        $src.port = src.port
+        $dst.host = dst.host
+        $dst.ip = dst.ip
+        $dst.port = dst.port
+        $object.process.fullpath = object.process.fullpath
+        $object.process.id = object.process.id
+        $event_src.host = event_src.host
+
+    }
+emit {
+    $correlation_type = "event"
+    $importance = "high"
+    
+    $subject = "account"
+    $action = "start"
+    $object = "process"
+    $status = "success"
+}
