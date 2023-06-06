@@ -1,0 +1,4 @@
+Description: 'Detection of the creation of a "fake" user account imitating a computer account.'
+EventDescriptions:
+    - LocalizationId: 'corrname_Detect_Fake_ComputerAccount'
+      EventDescription: 'Detection of the creation of a "fake" user account {object.name} imitating a computer account. On the host {event_src.host}'
