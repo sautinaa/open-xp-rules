@@ -1,0 +1,27 @@
+event WmiEventConsumerToWmiEventFilter_19:
+    key:
+        event_src.host
+    filter {
+        msgid == "19"
+        and event_src.title == "sysmon"
+        and object.state == "created"
+    }
+
+event WmiEventConsumer_20:
+    key:
+        event_src.host
+    filter {
+        msgid == "20"
+        and event_src.title == "sysmon"
+        and object.state == "created"
+    }
+
+event WmiEventConsumerToFilter_21:
+    key:
+        event_src.host
+    filter {
+        msgid == "21"
+        and event_src.title == "sysmon"
+        and object.state == "created"
+    }
+

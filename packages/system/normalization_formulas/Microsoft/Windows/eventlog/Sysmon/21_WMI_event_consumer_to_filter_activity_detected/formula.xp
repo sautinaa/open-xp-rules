@@ -26,6 +26,17 @@ object.query = strip($csv, "\\\\\\\\.\\\\", "")
 object.type = "consumer-filter"
 object.state = lower($Data["Operation"])            
 
+
+#    "object.name": "CommandLineEventConsumer.Name=\\\"BotConsumer23\\\"",
+# consumer_name
+$start_datafield1 = replace(object.name, "", "*=??",10)
+datafield1 = strip($start_datafield1, "", "\\\"")
+
+#     "object.query": "__EventFilter.Name=\\\"BotFilter82\\\"",
+$start_datafield2 = replace(object.query, "", "*=??",10)
+datafield2 = strip($start_datafield2, "", "\\\"")
+
+
 time = $Data["UtcTime"]
 msgid = $EventID
 importance = "info"
