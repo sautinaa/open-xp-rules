@@ -1,0 +1,5 @@
+# Вайтлистинг
+table_list default
+table_list {"Common_whitelist_auto": [{"rule": "Credentials_MiniDumpWriteDump_Lsass_ps", "specific_value": ""}]}
+
+expect not {"correlation_name": "Credentials_MiniDumpWriteDump_Lsass_ps"}
