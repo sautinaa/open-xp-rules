@@ -92,9 +92,9 @@ emit {
 
     $importance = "medium"
 
-    $category.generic = "Privilege Escalation"
-    $category.high = "Access Token Manipulation"
-    $category.low = "Token Impersonation/Theft "
+    $category.generic = "Attack"
+    $category.high = "Privilege Escalation"
+    $category.low = "Access Token Manipulation: Token Impersonation/Theft"
 
     $incident.aggregation.key = join([$correlation_name, lower($event_src.host), lower($subject.account.name), lower($subject.process.id), lower($object.account.name)], "|")
     $incident.aggregation.timeout = 2h
