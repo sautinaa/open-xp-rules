@@ -52,9 +52,9 @@ emit {
 
     $importance = "low"
 
-    $category.generic = "Asset & Asset Group Management"
-    $category.high = "Asset Group Management"
-    $category.low = "Creation"
+    $category.generic = "Attack"
+    $category.high = "Defense Evasion"
+    $category.low = "Masquerading"
 
     $incident.aggregation.key = join([$correlation_name, $object.account.name], "|")
     $incident.severity = "low"

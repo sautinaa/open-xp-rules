@@ -2,7 +2,7 @@ ObjectId: LOC-CR-277281147
 ContentAutoName: Detect_Fake_ComputerAccount
 ExpertContext:
     Created: 04.06.2023
-    Updated: 07.06.2023
+    Updated: 08.06.2023
     Usecases:
         - Выявление создания "фейковой" учетной записи , имитирующим учетную запись компьютера (например, MSSQLDB01$)
     References:
@@ -19,6 +19,8 @@ ExpertContext:
 ContentRelations:
     Implements:
         ATTACK:
+            defense-evasion:
+                - T1036
             persistence:
                 - T1136
 EventDescriptions:

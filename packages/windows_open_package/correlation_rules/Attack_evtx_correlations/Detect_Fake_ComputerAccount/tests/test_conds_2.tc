@@ -1,5 +1,0 @@
-# Вайтлистинг
-table_list default
-table_list {"Common_whitelist_auto": [{"rule": "Detect_Fake_ComputerAccount", "specific_value": ""}]}
-
-expect not {"correlation_name": "Detect_Fake_ComputerAccount"}

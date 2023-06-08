@@ -1,4 +1,0 @@
-Description: 'The rule detected an attempted "password spraying" attack using the kerberos protocol'
-EventDescriptions:
-    - LocalizationId: 'corrname_kerberos_pwd_spraying'
-      EventDescription: 'Detects multiple failed pre-authentication logins {subject.account.name} with multiple valid domain accounts from a single source system {src.host} using the Kerberos protocol'
