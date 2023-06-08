@@ -1,7 +1,7 @@
-ContentAutoName: UAC_Bypass_Via_Consent.exe
+ContentAutoName: UAC_Bypass_Via_Consent
 ExpertContext:
     Created: 02.06.2023
-    Updated: 05.06.2023
+    Updated: 08.06.2023
     KnowledgeHolders:
         - Konstantin Grischenko
     Usecases:
@@ -21,5 +21,5 @@ ContentRelations:
             privilege-escalation:
                 - T1548.002
 EventDescriptions:
-    - Criteria: correlation_name = "UAC_Bypass_Via_Consent.exe"
-      LocalizationId: corrname_UAC_Bypass_Via_Consent.exe
+    - Criteria: correlation_name = "UAC_Bypass_Via_Consent"
+      LocalizationId: corrname_UAC_Bypass_Via_Consent

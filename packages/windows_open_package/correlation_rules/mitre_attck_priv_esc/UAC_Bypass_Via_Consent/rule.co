@@ -20,7 +20,7 @@ event Image_Load:
         and match(lower(object.process.fullpath), "?:\\windows\\system32\\consent.exe.local\\*")
     }
 
-rule UAC_Bypass_Via_Consent.exe: Process_Start -> Image_Load 
+rule UAC_Bypass_Via_Consent: Process_Start -> Image_Load 
     on Process_Start {
         $subject.account.session_id = object.account.session_id
         $subject.account.name = object.account.name
