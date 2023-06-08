@@ -73,9 +73,6 @@ rule DCSync: ADDS_Replication_With_UserAccount or ADDS_Replication_With_LocalSys
         $event_src.title = event_src.title
         $event_src.category = event_src.category
         $event_src.rule = event_src.rule
-
-        #$alert.key = 
-        #$alert.context = 
     }
 
     on ADDS_Replication_With_LocalSystemAccount {
@@ -112,9 +109,6 @@ rule DCSync: ADDS_Replication_With_UserAccount or ADDS_Replication_With_LocalSys
         $event_src.title = event_src.title
         $event_src.category = event_src.category
         $event_src.rule = event_src.rule
-
-        #$alert.key = 
-        #$alert.context = 
     }
 
 # schema https://help.ptsecurity.com/projects/siem/7.2/ru-RU/help/2203906443
@@ -132,16 +126,12 @@ emit {
 
     $importance = "high"
 
-    $category.generic = "Attacks & Recon"
-    $category.high = "Attack"
-    $category.low = "Complex Attack"
+    $category.generic = "Attack"
+    $category.high = "Credential Access"
+    $category.low = "OS Credential Dumping: DCSync"
 
-    $incident.aggregation.key = join([$correlation_name, $event_src.hostname, $subject.account.name], "|")
+    $incident.aggregation.key = join([$correlation_name, $event_src.host, $subject.account.name], "|")
     $incident.severity = "high"
     $incident.category = "Undefined"
     $incident.aggregation.timeout = 10m
-
-    #$dst.fqdn = $event_src.fqdn
-    #$dst.hostname = $event_src.hostname
-    
 }
