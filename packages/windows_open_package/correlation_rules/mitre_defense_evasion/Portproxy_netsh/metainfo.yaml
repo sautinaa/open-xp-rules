@@ -2,7 +2,7 @@ ObjectId: LOC-CR-913584083
 ContentAutoName: Portforward_netsh
 ExpertContext:
     Created: 03.06.2023
-    Updated: 03.06.2023
+    Updated: 08.06.2023
     References:
         - https://woshub.com/port-forwarding-in-windows/
     KnowledgeHolders:
@@ -25,8 +25,8 @@ ExpertContext:
 ContentRelations:
     Implements:
         ATTACK:
-            defense-evasion:
-                - T1205
+            command-and-control:
+                - T1090
 EventDescriptions:
     - Criteria: correlation_name = "Portproxy_netsh" and object = "process"
       LocalizationId: corrname_Portproxy_netsh

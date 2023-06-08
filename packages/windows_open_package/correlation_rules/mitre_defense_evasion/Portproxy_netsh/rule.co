@@ -163,8 +163,8 @@ emit {
     $status = "success"    
        
     $category.generic = "Attack"
-    $category.high = "Defense Evasion"
-    $category.low = "Traffic Signaling"
+    $category.high = "Command and Control"
+    $category.low = "Proxy"
 
     $incident.aggregation.key = join([$correlation_name, $event_src.host], "|")
     $incident.severity = $importance
