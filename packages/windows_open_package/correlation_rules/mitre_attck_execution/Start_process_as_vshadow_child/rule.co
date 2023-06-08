@@ -16,7 +16,7 @@ rule Start_process_as_vshadow_child: Process_Start
     }
 
     on Process_Start {
-      $subject = subject
+        $subject = subject
         $action = action
         $object = object
         $status = status
@@ -74,9 +74,9 @@ emit {
 
     $importance = "medium"
 
-    $category.generic = "Execution"
-    $category.high = "System Services"
-    $category.low = "Service Execution"
+    $category.generic = "Attack"
+    $category.high = "Execution"
+    $category.low = "System Services: Service Execution"
 
     $incident.aggregation.key = join([$correlation_name, lower($event_src.host), lower($subject.account.id)], "|")
     $incident.aggregation.timeout = 2h
