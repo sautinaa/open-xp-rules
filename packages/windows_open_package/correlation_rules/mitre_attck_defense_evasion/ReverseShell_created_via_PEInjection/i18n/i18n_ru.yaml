@@ -1,4 +1,4 @@
 Description: 'Обнаружено подозрительное сетевое соединение'
 EventDescriptions:
     - LocalizationId: 'corrname_ReverseShell_created_via_PEInjection'
-      EventDescription: 'Процесс {object.process.parent.name} получил доступ к процессу {subject.process.name}, который породил сетевое соединение с узлом {dst.ip}'
+      EventDescription: 'Процесс {object.process.parent.name} получил доступ к процессу {object.process.name}, который породил сетевое соединение с узлом {dst.ip}'

@@ -2,7 +2,7 @@ ObjectId: LOC-CR-420817287
 ContentAutoName: ReverseShell_created_via_PEInjection
 ExpertContext:
     Created: 06.06.2023
-    Updated: 06.06.2023
+    Updated: 08.06.2023
     KnowledgeHolders:
         - driverenok
     Usecases:
@@ -23,3 +23,8 @@ ExpertContext:
 EventDescriptions:
     - Criteria: correlation_name = "ReverseShell_created_via_PEInjection"
       LocalizationId: corrname_ReverseShell_created_via_PEInjection
+ContentRelations:
+    Implements:
+        ATTACK:
+            defense-evasion:
+                - T1620
