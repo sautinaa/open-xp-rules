@@ -6,7 +6,7 @@ ExpertContext:
     KnowledgeHolders:
         - driverenok
     Usecases:
-        - Атакующие могут приостанавливать выполнение процесса (PROCESS_SUSPEND_RESUME) с целью внедрения в него вредоносного кода (техники Process Hollowing, Process Herpaderping  )
+        - Атакующие могут приостанавливать выполнение процесса (PROCESS_SUSPEND_RESUME) с целью внедрения в него вредоносного кода (техники Process Hollowing, Process Herpaderping )
     References:
         - https://www.systemconf.com/2020/07/31/dll-injection-and-process-hollowing-detection-in-pest-code-analysis/
         - https://attack.mitre.org/techniques/T1055
