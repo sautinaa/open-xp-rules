@@ -64,7 +64,7 @@ rule Suspend_prpcess: AccessProccess
     }
 
 emit {
-    $correlation_name = "Create_persist_via_WinlogonShell"
+    $correlation_name = "Suspend_prpcess"
     $correlation_type = "incident"
 
     $importance = "medium"
