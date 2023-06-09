@@ -1,0 +1,4 @@
+Description: 'Обнаружен доступ к процессу с доступом PROCESS_SUSPEND_RESUME'
+EventDescriptions:
+    - LocalizationId: 'corrname_Suspend_prpcess'
+      EventDescription: 'Процесс {subject.process.name} получил доступ к процессу {object.process.name} с правом доступа PROCESS_SUSPEND_RESUME'
