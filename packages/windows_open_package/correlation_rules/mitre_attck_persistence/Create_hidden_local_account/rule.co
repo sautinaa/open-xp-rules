@@ -22,7 +22,6 @@ event Create_account_registry:
         
         # \\registry\\machine\\sam\\sam\\domains\\account\\users\\names\\hideme0007$\\"
         and match(lower(object.path), "\\registry\\machine\\sam\\sam\\domains\\account\\users\\names\\*$\\")
-        and subject.process.name == "lsass.exe"        
     }
 
 
