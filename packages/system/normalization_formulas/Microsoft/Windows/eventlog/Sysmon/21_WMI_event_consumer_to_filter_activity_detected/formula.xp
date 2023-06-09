@@ -28,13 +28,13 @@ object.state = lower($Data["Operation"])
 
 
 #    "object.name": "CommandLineEventConsumer.Name=\\\"BotConsumer23\\\"",
-# consumer_name
-$start_datafield1 = replace(object.name, "", "*=??",10)
-datafield1 = strip($start_datafield1, "", "\\\"")
+# consumer_nameba
+$nameConsumer = replace(object.name, "", "*=??",10)
+datafield1 = strip($nameConsumer, "", "\\\"")
 
 #     "object.query": "__EventFilter.Name=\\\"BotFilter82\\\"",
-$start_datafield2 = replace(object.query, "", "*=??",10)
-datafield2 = strip($start_datafield2, "", "\\\"")
+$nameFilter = replace(object.query, "", "*=??",10)
+datafield2 = strip($nameFilter, "", "\\\"")
 
 
 time = $Data["UtcTime"]
