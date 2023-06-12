@@ -1,0 +1,7 @@
+EventDescriptions:
+    - Criteria: id = "PT_Microsoft_Windows_eventlog_4799_Process_enumerates_members_of_security_enabled"
+      LocalizationId: 4799_Process_enumerates_members_of_security_enabled_1
+ObjectId: LOC-NF-174116826
+ExpertContext:
+    Created: 12.06.2023
+    Updated: 12.06.2023

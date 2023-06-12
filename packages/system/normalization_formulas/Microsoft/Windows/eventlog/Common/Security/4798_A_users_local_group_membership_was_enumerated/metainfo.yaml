@@ -1,0 +1,7 @@
+EventDescriptions:
+    - Criteria: id = "PT_Microsoft_Windows_eventlog_4798_A_users_local_group_membership_was_enumerated
+      LocalizationId: 4798_A_users_local_group_membership_was_enumerated_1
+ObjectId: LOC-NF-379908945
+ExpertContext:
+    Created: 12.06.2023
+    Updated: 12.06.2023

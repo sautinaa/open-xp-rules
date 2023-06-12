@@ -1,0 +1,4 @@
+Description: 'Было произведено перечисление членов локальной группы пользователей'
+EventDescriptions:
+    - LocalizationId: '4798_A_users_local_group_membership_was_enumerated_1'
+      EventDescription: 'The process {datafield4} started by the user {subject.name} enumerated the members of the security-enabled local group {object.name} on host {event_src.host}'

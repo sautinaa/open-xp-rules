@@ -1,0 +1,4 @@
+Description: 'Процесс, перечисляющий членов локальной группы с включенной защитой'
+EventDescriptions:
+    - LocalizationId: '4799_Process_enumerates_members_of_security_enabled_1'
+      EventDescription: 'Процесс {datafield4}, запущенный пользователем {subject.name}, перечислил членов локальной группы безопасности {object.name} на узле {event_src.host}'
