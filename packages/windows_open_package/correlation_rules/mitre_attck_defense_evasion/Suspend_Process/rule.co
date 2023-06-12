@@ -9,7 +9,7 @@ event AccessProccess:
         in_list(["0x800"], object.value) != null
     }
 
-rule Suspend_prpcess: AccessProccess
+rule Suspend_Process: AccessProccess
 
     init {
         $labels = "w_auto" 
@@ -31,6 +31,7 @@ rule Suspend_prpcess: AccessProccess
         $subject.process.guid = subject.process.guid
         
         $action = action
+        $status = status
 
         $object = object
         $object.property = object.property
@@ -64,14 +65,14 @@ rule Suspend_prpcess: AccessProccess
     }
 
 emit {
-    $correlation_name = "Suspend_prpcess"
+    $correlation_name = "Suspend_Process"
     $correlation_type = "incident"
 
     $importance = "medium"
 
-    $category.generic = "Defense Evasion"
-    $category.high = "Process Injection"
-    $category.low = ""
+    $category.generic = "Attack"
+    $category.high = "Defense Evasion"
+    $category.low = "Process Injection"
 
     $incident.aggregation.key = join([$correlation_name, $event_src.host, $subject.process.fullpath], "|")
     $incident.aggregation.timeout = 2h

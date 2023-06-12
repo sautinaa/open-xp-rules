@@ -2,7 +2,7 @@ ObjectId: LOC-CR-162042829
 ContentAutoName: Suspend_prpcess
 ExpertContext:
     Created: 09.06.2023
-    Updated: 09.06.2023
+    Updated: 12.06.2023
     KnowledgeHolders:
         - driverenok
     Usecases:
@@ -23,5 +23,5 @@ ContentRelations:
             privilege-escalation:
                 - T1055
 EventDescriptions:
-    - Criteria: correlation_name = "Suspend_prpcess"
+    - Criteria: correlation_name = "Suspend_Process"
       LocalizationId: corrname_Suspend_prpcess
