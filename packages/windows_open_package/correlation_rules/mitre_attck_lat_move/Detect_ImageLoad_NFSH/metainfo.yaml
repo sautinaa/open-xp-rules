@@ -1,0 +1,20 @@
+Updated: 26.12.2022
+ObjectId: LOC-CR-120990365
+ContentAutoName: Detect_ImageLoad_NFSH
+ExpertContext:
+    Created: 12.06.2023
+    Updated: 12.06.2023
+    Usecases:
+        - Детектирование попытки удаленной инъекции DLL в процесс LSASS
+    DataSources:
+        - Provider: Microsoft-Windows-Sysmon
+          EventID:
+              - 7
+ContentRelations:
+    Implements:
+        ATTACK:
+            lateral-movement:
+                - T1563
+EventDescriptions:
+    - Criteria: correlation_name = "Detect_ImageLoad_NFSH"
+      LocalizationId: corrname_Detect_ImageLoad_NFSH
