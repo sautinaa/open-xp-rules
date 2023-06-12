@@ -1,4 +1,4 @@
 Description: 'User groups have been uploaded'
 EventDescriptions:
     - LocalizationId: 'corrname_Enumeration_Users_In_Groups'
-      EventDescription: 'test'
+      EventDescription: 'User {subject.account.name } listed the groups for the user {object.account.name }'
