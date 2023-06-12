@@ -1,5 +1,1 @@
-# Вайтлистинг
-table_list default
-table_list {"Common_whitelist_auto": [{"rule": "RDP_settings_tampering", "specific_value": ""}]}
-
-expect not {"correlation_name": "RDP_settings_tampering"}
+expect 1 {"correlation_name": "RDP_settings_tampering"}

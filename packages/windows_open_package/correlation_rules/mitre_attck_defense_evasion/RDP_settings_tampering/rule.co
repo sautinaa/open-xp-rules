@@ -85,9 +85,9 @@ emit {
     
     $importance = "medium"
        
-    $category.generic = "Defense Evasion"
-    $category.high = "Modify Registry "
-    $category.low = ""
+    $category.generic = "Attack"
+    $category.high = "Defense Evasion"
+    $category.low = "Modify Registry"
 
     $incident.aggregation.key = join([$correlation_name, $event_src.host, $subject.process.name], "|")
     $incident.aggregation.timeout = 2h
