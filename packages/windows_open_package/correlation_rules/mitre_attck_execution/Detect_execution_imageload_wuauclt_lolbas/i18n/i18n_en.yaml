@@ -1,0 +1,4 @@
+Description: 'Loading an arbitrary DLL via Windows Update Client'
+EventDescriptions:
+    - LocalizationId: 'corrname_Detect_execution_imageload_wuauclt_lolbas'
+      EventDescription: 'Detected on host {event_src.host} loading of arbitrary dll {object.process.parent.cmdline} from user directory {object.process.parent.path}'
