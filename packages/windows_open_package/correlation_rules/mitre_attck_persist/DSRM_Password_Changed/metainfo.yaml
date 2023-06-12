@@ -8,6 +8,10 @@ ExpertContext:
         - Georgy Khandozhko
     References:
         - https://learn.microsoft.com/ru-ru/windows/security/threat-protection/auditing/event-4794
+    DataSources:
+        - Provider: Microsoft-Windows-Security-Auditing
+          EventID:
+              - 4794
 EventDescriptions:
     - Criteria: correlation_name = "DSRM_Password_Changed" and status = "success"
       LocalizationId: corrname_DSRM_Password_Changed

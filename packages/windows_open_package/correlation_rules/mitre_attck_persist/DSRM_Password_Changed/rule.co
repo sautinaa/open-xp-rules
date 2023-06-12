@@ -43,9 +43,9 @@ emit {
 
     $importance = "high"
 
-    $category.generic = "Account"
-    $category.high = "Users And Rights Management"
-    $category.low = "Manipulation"
+    $category.generic = "Attack"
+    $category.high = "Persistence"
+    $category.low = "Account Manipulation"
 
     $incident.aggregation.key = join([$correlation_name, lower($event_src.host), lower($subject.account.id)], "|")
     $incident.severity = $importance
