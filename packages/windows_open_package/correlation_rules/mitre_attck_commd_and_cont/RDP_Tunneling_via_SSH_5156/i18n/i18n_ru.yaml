@@ -1,0 +1,6 @@
+Description: 'Обнаружение процесса svchost на котором размещена служба RDP termsvcs, взаимодействующая с петвелым адресом.'
+EventDescriptions:
+    - LocalizationId: 'corrname_RDP_Tunneling_via_SSH_5156'
+      EventDescription: 'В {time}C хоста {event_src.host} было совершено успешное исходящее подключение с адреса: {src.ip} целевой адрес: {dst.ip}порт назначения: {dst.port} Сведения о приложении, инициировавшем соединение: Идентификатор процесса: {object.process.id} Имя приложения: {object.process.fullpath}'
+    - LocalizationId: 'corrname_RDP_Tunneling_via_SSH_5156_2'
+      EventDescription: 'В {time} C хоста {event_src.host} было совершено успешное входящее подключение: с адреса: {src.ip} Порт источника: {src.port} целевой адрес: {dst.ip} Сведения о приложении, инициировавшем соединение: Идентификатор процесса: {object.process.id} Имя приложения: {object.process.name}'
