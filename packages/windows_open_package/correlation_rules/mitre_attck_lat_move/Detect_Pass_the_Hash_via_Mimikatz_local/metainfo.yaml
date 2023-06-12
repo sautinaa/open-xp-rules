@@ -1,0 +1,24 @@
+ObjectId: LOC-CR-193927723
+ContentAutoName: Detect_Pass_the_Hash_via_Mimikatz_local
+ExpertContext:
+    Created: 08.06.2023
+    Updated: 12.06.2023
+    Usecases:
+        - Детектироование Pass-The-Hash на локальной машине
+        - Детектирование атаки с использованием mimikatz, который запускает процесс с поддельным идентификатором, затем заменяет поддельную информацию (NTLM-хэш) реальной информацией (NTLM-хэш настоящего пароля)
+    References:
+        - https://security.stackexchange.com/questions/251690/how-does-local-pass-the-hash-mimikatzs-sekurlsapth-work
+        - https://cybersafe.co.il/wp-content/uploads/2021/11/LOGON-types-compressed_compressed.pdf
+    DataSources:
+        - Provider: Microsoft-Windows-Security-Auditing
+          EventID:
+              - 4624
+              - 4672
+ContentRelations:
+    Implements:
+        ATTACK:
+            lateral-movement:
+                - T1550.002
+EventDescriptions:
+    - Criteria: correlation_name = "Detect_Pass_the_Hash_via_Mimikatz_local"
+      LocalizationId: corrname_Detect_Pass_the_Hash_via_Mimikatz_local
