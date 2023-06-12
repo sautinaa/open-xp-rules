@@ -2,7 +2,7 @@ ObjectId: LOC-CR-128949563
 ContentAutoName: Dump_lsass_via_process_access
 ExpertContext:
     Created: 09.06.2023
-    Updated: 09.06.2023
+    Updated: 12.06.2023
     References:
         - https://car.mitre.org/analytics/CAR-2019-04-004/
         - https://www.splunk.com/en_us/blog/security/you-bet-your-lsass-hunting-lsass-access.html
