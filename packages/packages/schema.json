@@ -1,0 +1,54 @@
+{
+    "AD_Domain_Controllers": {
+        "description": "Active Directory domain controllers",
+        "fields": {
+            "_id": {
+                "index": true,
+                "nullable": false,
+                "primaryKey": false,
+                "type": "Number",
+                "unique": true
+            },
+            "_last_changed": {
+                "index": true,
+                "nullable": false,
+                "primaryKey": false,
+                "type": "Datetime"
+            },
+            "complex_key": {
+                "compositeFields": [
+                    "ip",
+                    "hostname"
+                ],
+                "index": true,
+                "nullable": false,
+                "primaryKey": true,
+                "type": "composite",
+                "unique": true
+            },
+            "hostname": {
+                "index": true,
+                "nullable": false,
+                "primaryKey": false,
+                "type": "String"
+            },
+            "ip": {
+                "index": false,
+                "nullable": false,
+                "primaryKey": false,
+                "type": "String"
+            }
+        },
+        "fillType": "Registry",
+        "objectId": "LOC-TL-41842215",
+        "order": [
+            "complex_key",
+            "ip",
+            "hostname",
+            "_last_changed",
+            "_id"
+        ],
+        "type": 1,
+        "userCanEditContent": true
+    }
+}
