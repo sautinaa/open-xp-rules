@@ -1,0 +1,4 @@
+Description: 'Suspicious potential login detection similar to Kerberos relay attack variant required for potential privilege invocation'
+EventDescriptions:
+    - LocalizationId: 'corrname_Potential_Privileged_Escalation_via_KrbRelayUp'
+      EventDescription: 'On host {event_src.host} a successful login was made from the address {src.ip} by user {subject.account.domain}\{subject.account.name}'

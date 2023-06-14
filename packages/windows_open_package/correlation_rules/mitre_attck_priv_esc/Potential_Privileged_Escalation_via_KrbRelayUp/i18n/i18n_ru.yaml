@@ -1,0 +1,4 @@
+Description: 'Обнаружение подозрительного локального  входа в систему, который похож на вариант атаки ретрансляции Kerberos, необходимый для локального повышения привилегий'
+EventDescriptions:
+    - LocalizationId: 'corrname_Potential_Privileged_Escalation_via_KrbRelayUp'
+      EventDescription: 'На узле {event_src.host} был совершен успешный вход с адреса {src.ip} под УЗ {subject.account.domain}\{subject.account.name}'
