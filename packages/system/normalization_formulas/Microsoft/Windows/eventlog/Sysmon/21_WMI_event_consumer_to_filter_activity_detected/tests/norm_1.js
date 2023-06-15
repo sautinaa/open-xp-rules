@@ -1,4 +1,6 @@
 {
+    "datafield1":"ServiceConsumer",
+    "datafield2":"ServiceFilter",
     "action": "modify",
     "event_src.category": "Other",
     "event_src.fqdn": "server16.server16.int",
