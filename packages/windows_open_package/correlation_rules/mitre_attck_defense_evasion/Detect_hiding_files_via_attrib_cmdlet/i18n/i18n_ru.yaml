@@ -1,0 +1,4 @@
+Description: 'Злоумышленники могут скрывать файлы и каталоги, чтобы избежать механизмов обнаружения и скрыть сови действия от пользователя.'
+EventDescriptions:
+    - LocalizationId: 'corrname_Detect_hiding_files_via_attrib_cmdlet'
+      EventDescription: 'На узле {event_src.host} обнаружено использования метода сокрытия запускаемого процесса {object.process.cmdline}'
