@@ -1,0 +1,4 @@
+Description: 'Detect proxy execution of binary via Windows utility Program Compatibility Assistant'
+EventDescriptions:
+    - LocalizationId: 'corrname_Detect_lolbin_pcalua_exec'
+      EventDescription: 'On host {event_src.host} full execution of binary file through proxy file {object.process.cmdline}, standard Windows utilities - Program Compatibility Assistant'

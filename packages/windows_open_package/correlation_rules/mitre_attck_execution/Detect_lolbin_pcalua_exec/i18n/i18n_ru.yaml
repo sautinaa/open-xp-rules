@@ -1,0 +1,4 @@
+Description: 'Обнаружено прокси-выполнение двоичного файла с помощью стандартной утилиты Windows (Помощника по совместимости программ)'
+EventDescriptions:
+    - LocalizationId: 'corrname_Detect_lolbin_pcalua_exec'
+      EventDescription: 'На узле {event_src.host} обнаружено выполнение бинарного файла через прокси файл {object.process.cmdline}, стандартной утилиты Windows - Помощника по совместимости программ'
