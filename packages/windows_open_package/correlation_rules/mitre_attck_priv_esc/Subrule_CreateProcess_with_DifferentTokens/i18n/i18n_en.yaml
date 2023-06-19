@@ -1,0 +1,4 @@
+Description: 'Access Token Manipulation detect'
+EventDescriptions:
+    - LocalizationId: 'corrname_Subrule_CreateProcess_with_DifferentTokens'
+      EventDescription: 'Process with PID {object.process.parent.id} escalate own privileges:{alert.key} at host {event_src.host}'

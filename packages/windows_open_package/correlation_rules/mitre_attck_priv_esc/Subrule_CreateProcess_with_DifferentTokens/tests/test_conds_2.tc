@@ -1,0 +1,5 @@
+# Вайтлистинг
+table_list default
+table_list {"Common_whitelist_auto": [{"rule": "Subrule_CreateProcess_with_DifferentTokens", "specific_value": ""}]}
+
+expect not {"correlation_name": "Subrule_CreateProcess_with_DifferentTokens"}

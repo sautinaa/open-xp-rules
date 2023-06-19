@@ -1,0 +1,28 @@
+ObjectId: LOC-CR-206774439
+ContentAutoName: Subrule_CreateProcess_with_DifferentTokens
+ExpertContext:
+    Created: 19.06.2023
+    Updated: 19.06.2023
+    KnowledgeHolders:
+        - driverenok
+    Usecases:
+        - Атакующие могут повышать привилегии путем манипуляций с Access Tokens
+    References:
+        - https://attack.mitre.org/techniques/T1134/
+    DataSources:
+        - Provider: Microsoft-Windows-Security-Auditing
+          EventID:
+              - 4688
+        - Provider: Microsoft-Windows-Sysmon
+          EventID:
+              - 1
+ContentRelations:
+    Implements:
+        ATTACK:
+            privilege-escalation:
+                - T1134
+            defense-evasion:
+                - T1134
+EventDescriptions:
+    - Criteria: correlation_name = "Subrule_CreateProcess_with_DifferentTokens"
+      LocalizationId: corrname_Subrule_CreateProcess_with_DifferentTokens
