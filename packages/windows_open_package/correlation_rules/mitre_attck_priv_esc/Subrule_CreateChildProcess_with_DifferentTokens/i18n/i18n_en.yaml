@@ -1,0 +1,4 @@
+Description: 'The launch of child processes with different Access Tokens was detected'
+EventDescriptions:
+    - LocalizationId: 'corrname_Subrule_CreateChildProcess_with_DifferentTokens'
+      EventDescription: 'Process with PID {object.process.parent.id} escalate own privileges:{alert.key} at host {event_src.host}'

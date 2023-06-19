@@ -16,10 +16,10 @@ event Process_Start_with_FullToken:
         in_list(["TokenElevationTypeFull", "TokenElevationTypeDefault"], subject.account.privileges) 
     }
 
-rule Subrule_CreateProcess_with_DifferentTokens: Process_Start_with_LimitedToken and Process_Start_with_FullToken with different subject.account.session_id
+rule Subrule_CreateChildProcess_with_DifferentTokens: Process_Start_with_LimitedToken and Process_Start_with_FullToken with different subject.account.session_id
 
     init {
-        $labels = "w_auto|CheckWL_Process_Creation"
+        $labels = "w_auto"
     }
 
     on Process_Start_with_LimitedToken {

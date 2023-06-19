@@ -1,4 +1,0 @@
-Description: 'Обнаружено повышение привилегии путем манипуляций с Access Tokens'
-EventDescriptions:
-    - LocalizationId: 'corrname_Subrule_CreateProcess_with_DifferentTokens'
-      EventDescription: 'Процесс с идентификатором {object.process.parent.id} повысил свои привилегии: {alert.key} на хосте {event_src.host}'
