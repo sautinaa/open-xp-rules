@@ -2,7 +2,7 @@ ObjectId: LOC-CR-192895047
 ContentAutoName: Detect_execution_imageload_wuauclt_lolbas
 ExpertContext:
     Created: 07.06.2023
-    Updated: 12.06.2023
+    Updated: 23.06.2023
     Usecases:
         - Обнаруживает использование двоичного файла клиента Центра обновления Windows (wuauclt.exe) для прокси-исполнения кода
         - Обнаружение загрузки произвольной DLL через клиент Центра обновления Windows
@@ -21,5 +21,7 @@ ContentRelations:
             execution:
                 - T1218
 EventDescriptions:
-    - Criteria: correlation_name = "Detect_execution_imageload_wuauclt_lolbas"
+    - Criteria: correlation_name = "Detect_execution_imageload_wuauclt_lolbas" and object = "module"
       LocalizationId: corrname_Detect_execution_imageload_wuauclt_lolbas
+    - Criteria: correlation_name = "Detect_execution_imageload_wuauclt_lolbas" and object = "process"
+      LocalizationId: corrname_Detect_execution_imageload_wuauclt_lolbas_2
