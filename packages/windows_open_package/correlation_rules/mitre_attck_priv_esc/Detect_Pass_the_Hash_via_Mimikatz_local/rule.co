@@ -127,8 +127,8 @@ emit {
     $importance = "high"
 
     $category.generic = "Attack"
-    $category.high = "Lateral Movement"
-    $category.low = "Use Alternate Authentication Material: Pass the Hash"
+    $category.high = "Privilege Escalation"
+    $category.low = "Access Token Manipulation: Make and Impersonate Token"
     $incident.aggregation.key = join([$correlation_name, $event_src.host, $subject.account.name, $object.account.name], "|")
     $incident.severity = $importance
     $incident.category = "Undefined"
