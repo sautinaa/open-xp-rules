@@ -1,4 +1,0 @@
-Description: 'Обнаружен запуск дочерних процессов с различными маркерами доступа (Access Tokens)'
-EventDescriptions:
-    - LocalizationId: 'corrname_Subrule_CreateChildProcess_with_DifferentTokens'
-      EventDescription: 'Процесс с идентификатором {object.process.parent.id} повысил свои привилегии: {alert.key} на хосте {event_src.host}'
