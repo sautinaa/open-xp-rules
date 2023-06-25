@@ -1,4 +1,4 @@
-Description: 'Creation a hidden Run value was detected'
+Description: 'Creation of a hidden Run registry key value was detected'
 EventDescriptions:
     - LocalizationId: 'corrname_Create_persist_via_Hidden_Run_key_value'
       EventDescription: 'User {subject.account.domain}\{subject.account.name} created a hidden Run registry key value at host {event_src.host}'
