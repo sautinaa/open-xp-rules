@@ -1,0 +1,4 @@
+Description: "User's groups have been enumerated"
+EventDescriptions:
+    - LocalizationId: 'corrname_Enumeration_Users_In_Groups'
+      EventDescription: 'User {subejct.account.domain}/{subject.account.name } listed the groups for the user {object.account.domain}/{object.account.name }'

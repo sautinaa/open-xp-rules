@@ -1,0 +1,4 @@
+Description: 'Выполнено перечисление групп пользователя'
+EventDescriptions:
+    - LocalizationId: 'corrname_Enumeration_Users_In_Groups'
+      EventDescription: 'Пользователь {subejct.account.domain}/{subejct.account.name} перечислил группы для пользователя {object.account.domain}/{object.account.name}'

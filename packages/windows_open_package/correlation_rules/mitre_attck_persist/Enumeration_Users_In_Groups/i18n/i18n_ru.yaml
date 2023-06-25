@@ -1,4 +1,0 @@
-Description: 'Выполнена выгрузка групп пользователя'
-EventDescriptions:
-    - LocalizationId: 'corrname_Enumeration_Users_In_Groups'
-      EventDescription: 'Пользователь {subejct.account.name} перечислил группы для пользователя {object.account.name}'
