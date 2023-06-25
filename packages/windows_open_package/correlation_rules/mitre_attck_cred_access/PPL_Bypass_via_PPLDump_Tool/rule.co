@@ -26,7 +26,7 @@ event PPL_dll:
     }
 
 
-rule Detect_PPL_Bypass_PPLDump_Knowdll_Hijack: (PPLdump and PPL_dll+) timer 1m
+rule PPL_Bypass_via_PPLDump_Tool: (PPLdump and PPL_dll+) timer 1m
 
     on PPLdump {
         $subject = subject
