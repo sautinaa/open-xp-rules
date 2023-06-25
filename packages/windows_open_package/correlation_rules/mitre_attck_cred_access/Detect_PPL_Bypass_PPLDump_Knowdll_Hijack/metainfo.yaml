@@ -3,7 +3,7 @@ ObjectId: LOC-CR-726341693
 ContentAutoName: Detect_PPL_Bypass_PPLDump_Knowdll_Hijack
 ExpertContext:
     Created: 14.06.2023
-    Updated: 14.06.2023
+    Updated: 25.06.2023
     Usecases:
         - Детектирование дампа процесса lsass через инструмент PPLdump
         - Детектирование dll hijacked с помощью обхода механизма защиты PPL
