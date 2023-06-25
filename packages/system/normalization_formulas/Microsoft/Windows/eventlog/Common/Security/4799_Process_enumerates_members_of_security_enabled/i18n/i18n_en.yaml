@@ -1,4 +1,0 @@
-Description: 'A process enumerates the members of a security-enabled local group'
-EventDescriptions:
-    - LocalizationId: '4799_Process_enumerates_members_of_security_enabled_1'
-      EventDescription: 'The process {datafield4} started by the user {subject.name} enumerated the members of the security-enabled local group {object.name} on host {event_src.host}'
