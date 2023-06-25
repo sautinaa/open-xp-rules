@@ -13,7 +13,7 @@ event DLL_Load_NFSH:
         and lower(object.value) == "not signed"
     }
 
-rule Detect_ImageLoad_NFSH: DLL_Load_NFSH
+rule ImageLoad_from_Network_Share_to_LSASS: DLL_Load_NFSH
 
     on DLL_Load_NFSH {
 
@@ -72,8 +72,8 @@ rule Detect_ImageLoad_NFSH: DLL_Load_NFSH
 emit {
     $correlation_type = "incident"
     $category.generic = "Attack"
-    $category.high = "Lateral Movement"
-    $category.low = "Remote Service Session Hijacking"
+    $category.high = "Defense Evasion"
+    $category.low = "Modify Authentication Process: Password Filter DLL"
     $importance = "medium"
     $incident.aggregation.key = join([$correlation_name, $event_src.host, $object.process.fullpath], "|")
     $incident.severity = $importance

@@ -1,9 +1,9 @@
 Updated: 26.12.2022
 ObjectId: LOC-CR-120990365
-ContentAutoName: Detect_ImageLoad_NFSH
+ContentAutoName: ImageLoad_from_Network_Share_to_LSASS
 ExpertContext:
     Created: 12.06.2023
-    Updated: 12.06.2023
+    Updated: 25.06.2023
     Usecases:
         - Детектирование попытки удаленной инъекции DLL в процесс LSASS
     DataSources:
@@ -13,8 +13,8 @@ ExpertContext:
 ContentRelations:
     Implements:
         ATTACK:
-            lateral-movement:
-                - T1563
+            defense-evasion:
+                - T1556
 EventDescriptions:
-    - Criteria: correlation_name = "Detect_ImageLoad_NFSH"
-      LocalizationId: corrname_Detect_ImageLoad_NFSH
+    - Criteria: correlation_name = "ImageLoad_from_Network_Share_to_LSASS"
+      LocalizationId: corrname_ImageLoad_from_Network_Share_to_LSASS

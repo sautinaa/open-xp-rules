@@ -1,4 +1,0 @@
-Description: 'Обнаружена попытка удаленной инъекции DLL в процесс LSASS'
-EventDescriptions:
-    - LocalizationId: 'corrname_Detect_ImageLoad_NFSH'
-      EventDescription: 'На узле {event_src.host} обнаружена попытка удаленной инъекции DLL {object.process.fullpath} в процесс LSASS'

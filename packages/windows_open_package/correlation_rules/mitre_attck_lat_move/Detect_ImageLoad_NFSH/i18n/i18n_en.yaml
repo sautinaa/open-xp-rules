@@ -1,4 +1,0 @@
-Description: 'Detection remote DLL injection attempt in LSASS process'
-EventDescriptions:
-    - LocalizationId: 'corrname_Detect_ImageLoad_NFSH'
-      EventDescription: 'On host {event_src.host} detection remote DLL {object.process.fullpath} injection attempt in LSASS process'
