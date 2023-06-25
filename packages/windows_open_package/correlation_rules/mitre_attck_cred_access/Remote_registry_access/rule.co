@@ -97,14 +97,13 @@ rule Remote_registry_access: Share_Access and Special_logon
     }
     
 emit {
-    $correlation_name = "Remote_registry_access"
     $correlation_type = "incident"
 
     $importance = "medium"
 
     $category.generic = "Attack"
     $category.high = "Credential Access"
-    $category.low = "OS Credential Dumping: Security Account Manager "
+    $category.low = "OS Credential Dumping: Security Account Manager"
 
     $incident.aggregation.key = join([$correlation_name, $subject.account.session_id], "|")
     $incident.aggregation.timeout = 1h
