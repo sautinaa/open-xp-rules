@@ -2,7 +2,7 @@ ObjectId: LOC-CR-31343766
 ContentAutoName: An_attempt_was_made_to_lsass_process
 ExpertContext:
     Created: 12.06.2023
-    Updated: 12.06.2023
+    Updated: 26.06.2023
     KnowledgeHolders:
         - driverenok
     Usecases:
@@ -25,9 +25,5 @@ ContentRelations:
 EventDescriptions:
     - Criteria: correlation_name = "An_attempt_was_made_to_lsass_process" and status = "success" and subject.account.domain != null
       LocalizationId: corrname_An_attempt_was_made_to_lsass_process
-    - Criteria: correlation_name = "An_attempt_was_made_to_lsass_process" and status = "ongoing" and subject.account.domain != null
-      LocalizationId: corrname_An_attempt_was_made_to_lsass_process_2
-    - Criteria: correlation_name = "An_attempt_was_made_to_lsass_process"  and status = "success" and subject.account.domain == null
+    - Criteria: correlation_name = "An_attempt_was_made_to_lsass_process" and status = "success" and subject.account.domain == null
       LocalizationId: corrname_An_attempt_was_made_to_lsass_process_3
-    - Criteria: correlation_name = "An_attempt_was_made_to_lsass_process" and status = "ongoing" and subject.account.domain == null
-      LocalizationId: corrname_An_attempt_was_made_to_lsass_process_4

@@ -2,9 +2,5 @@ Description: 'Обнаружена попытка получения досту�
 EventDescriptions:
     - LocalizationId: 'corrname_An_attempt_was_made_to_lsass_process'
       EventDescription: 'Процесс {subject.process.name}, запущенный от имени пользователя {subject.account.domain}\{subject.account.name}, получил доступ к процессу lsass на узле {event_src.host}'
-    - LocalizationId: 'corrname_An_attempt_was_made_to_lsass_process_2'
-      EventDescription: 'Процесс {subject.process.name}, запущенный от имени пользователя {subject.account.domain}\{subject.account.name}, запросил доступ к процессу lsass на узле {event_src.host}'
     - LocalizationId: 'corrname_An_attempt_was_made_to_lsass_process_3'
       EventDescription: 'Процесс {subject.process.name} получил доступ к процессу lsass на узле {event_src.host}'
-    - LocalizationId: 'corrname_An_attempt_was_made_to_lsass_process_4'
-      EventDescription: 'Процесс {subject.process.name} запросил доступ к процессу lsass на узле {event_src.host}'
