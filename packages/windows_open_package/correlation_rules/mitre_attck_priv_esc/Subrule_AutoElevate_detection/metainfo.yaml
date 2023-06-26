@@ -2,11 +2,11 @@ ObjectId: LOC-CR-124009838
 ContentAutoName: Subrule_AutoElevate_detection
 ExpertContext:
     Created: 22.06.2023
-    Updated: 23.06.2023
+    Updated: 26.06.2023
     KnowledgeHolders:
         - driverenok
     Usecases:
-        - "Легитимная активность, в результате которой процесс, имеющий в манифесте исполняемого файла опцию AutoElevate, запускаетс дважды: 1й запуск - с LimitedToken, 2й раз - с FullToken"
+        - "Легитимная активность, в результате которой процесс, имеющий в манифесте исполняемого файла опцию AutoElevate, запускается дважды: 1й запуск - с LimitedToken, 2й раз - с FullToken"
     Falsepositives:
         - Процессы, родителем которых является процесс explorer.exe и запускаются администраторами
     References:
