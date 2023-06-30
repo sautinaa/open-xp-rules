@@ -3,7 +3,7 @@ ObjectId: LOC-CR-450661205
 ContentAutoName: Detect_lolbin_pcalua_exec
 ExpertContext:
     Created: 18.06.2023
-    Updated: 18.06.2023
+    Updated: 30.06.2023
     Usecases:
         - Прокси-выполнение двоичного файла через использование Помощника по совместимости программ
     Falsepositives:
@@ -14,14 +14,10 @@ ExpertContext:
         - Provider: Microsoft-Windows-Sysmon
           EventID:
               - 1
-        - Provider: Microsoft-Windows-Security-Auditing
-          EventID:
-              - 4688
-              - 7045
 ContentRelations:
     Implements:
         ATTACK:
-            execution:
+            defense-evasion:
                 - T1202
 EventDescriptions:
     - Criteria: correlation_name = "Detect_lolbin_pcalua_exec"

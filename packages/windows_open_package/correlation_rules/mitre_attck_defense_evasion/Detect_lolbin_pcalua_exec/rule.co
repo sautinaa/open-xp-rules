@@ -91,7 +91,7 @@ emit {
     $importance = "medium"
 
     $category.generic = "Attack"
-    $category.high = "Execution"
+    $category.high = "Defense Evasion"
     $category.low = "Indirect Command Execution"
 
     $incident.aggregation.key = join([$correlation_name, lower($event_src.host), lower($object.process.cmdline)], "|")
