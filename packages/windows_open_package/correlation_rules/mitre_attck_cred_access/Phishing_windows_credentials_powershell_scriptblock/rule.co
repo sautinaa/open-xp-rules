@@ -77,7 +77,7 @@ emit {
 
     $category.generic = "Attack"
     $category.high = "Credential Access"
-    $category.low = "OS Credential Dumping"
+    $category.low = "Input Capture: GUI Input Capture"
 
     $incident.aggregation.key = join([$correlation_name, $event_src.host, $object.process.cmdline], "|")
     $incident.severity = $importance

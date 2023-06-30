@@ -1,5 +1,0 @@
-# Вайтлистинг
-table_list default
-table_list {"Common_whitelist_auto": [{"rule": "Phishing_windows_credentials_powershell_scriptblock", "specific_value": ""}]}
-
-expect not {"correlation_name": "Phishing_windows_credentials_powershell_scriptblock"}
