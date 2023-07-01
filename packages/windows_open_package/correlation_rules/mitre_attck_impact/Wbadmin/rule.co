@@ -6,8 +6,8 @@ event Process_Start:
         and event_src.title == "sysmon"
         and msgid == "1"
         and (
-            regex(lower(object.process.fullpath), ".*wbadmin\.exe.*", 0) != null
-            or lower(object.process.original_name) == "wbadmin.exe"
+            match(lower(object.process.cmdline), "*wbadmin.exe*delete*")
+            or match(lower(object.process.cmdline), "*wbadmin.exe*disable*")
         )
     }
 
