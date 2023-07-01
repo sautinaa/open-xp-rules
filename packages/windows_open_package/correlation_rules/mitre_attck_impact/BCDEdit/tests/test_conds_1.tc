@@ -1,1 +1,1 @@
-expect 1 {"correlation_name": "BCDEdit"}
+expect 2 {"correlation_name": "BCDEdit"}

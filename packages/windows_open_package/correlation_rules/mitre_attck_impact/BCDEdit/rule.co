@@ -6,8 +6,8 @@ event Process_Start:
         and event_src.title == "sysmon"
         and msgid == "1"
         and (
-            regex(lower(object.process.fullpath), ".*bcdedit\.exe.*", 0) != null
-            or lower(object.process.original_name) == "bcdedit.exe"
+            match(lower(object.process.cmdline), "*bcdedit.exe*/set*bootstatuspolicy*")
+            or match(lower(object.process.cmdline), "*bcdedit.exe*/set*recoveryenabled*no*")
         )
     }
 
