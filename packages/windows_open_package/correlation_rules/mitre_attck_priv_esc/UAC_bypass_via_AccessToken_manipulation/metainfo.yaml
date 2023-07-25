@@ -2,7 +2,7 @@ ObjectId: LOC-CR-193475549
 ContentAutoName: UAC_bypass_via_AccessToken_manipulation
 ExpertContext:
     Created: 26.06.2023
-    Updated: 26.06.2023
+    Updated: 25.07.2023
     KnowledgeHolders:
         - driverenok
     Usecases:
