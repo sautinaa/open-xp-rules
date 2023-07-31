@@ -3,6 +3,7 @@ event RequestHandle:
         event_src.host, subject.process.name, object.name
     filter {
         filter::NotFromCorrelator() and
+
         event_src.title == "windows" and msgid == "4656" and
         lower(object.type) == "process" and
         lower(object.name) == "lsass.exe" and
@@ -14,6 +15,7 @@ event AccessObject:
         event_src.host, subject.process.name, object.name
     filter {
         filter::NotFromCorrelator() and (
+
             (event_src.title == "windows" and msgid == "4663" and lower(object.type) == "process") or
             (event_src.title == "sysmon" and msgid == "10" and lower(object)  == "process")
         ) and (
