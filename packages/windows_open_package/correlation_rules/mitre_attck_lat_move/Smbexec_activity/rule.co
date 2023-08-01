@@ -71,7 +71,7 @@ rule Smbexec_activity: Service_Create_via_Registry_Activity or Service_Create_vi
     }
 
     on Service_Create_via_Registry_Activity {
-        $subject = subject
+        $subject = "process"
 
         $subject.account.id = subject.account.id
         $subject.account.name = subject.account.name
