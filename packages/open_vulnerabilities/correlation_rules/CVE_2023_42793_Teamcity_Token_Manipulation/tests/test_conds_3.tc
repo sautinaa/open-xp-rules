@@ -1,0 +1,3 @@
+# Тест на исключение с Username и событием создания токена
+table_list default
+expect not {"correlation_name": "CVE_2023_42793_Teamcity_Token_Manipulation"}
