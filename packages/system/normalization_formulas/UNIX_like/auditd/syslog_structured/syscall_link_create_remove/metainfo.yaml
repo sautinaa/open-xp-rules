@@ -1,0 +1,169 @@
+EventDescriptions:
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "create" and status = "success" and subject != "account"
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_create_link_success
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "create" and status = "failure" and subject != "account"
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_create_link_failure
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "remove" and status = "success" and subject != "account"
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_remove_link_success
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "remove" and status = "failure" and subject != "account"
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_remove_link_failure
+
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "create" and status = "success" and subject = "account" and subject.account.name = null
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_create_link_success_id
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "create" and status = "failure" and subject = "account" and subject.account.name = null
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_create_link_failure_id
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "remove" and status = "success" and subject = "account" and subject.account.name = null
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_remove_link_success_id
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "remove" and status = "failure" and subject = "account" and subject.account.name = null
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_remove_link_failure_id
+
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "create" and status = "success" and subject = "account" and subject.account.name != null and object.account.name = null
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_create_link_success_name
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "create" and status = "failure" and subject = "account" and subject.account.name != null and object.account.name = null
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_create_link_failure_name
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "remove" and status = "success" and subject = "account" and subject.account.name != null and object.account.name = null
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_remove_link_success_name
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "remove" and status = "failure" and subject = "account" and subject.account.name != null and object.account.name = null
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_remove_link_failure_name
+
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "create" and status = "success" and subject = "account" and subject.account.name != null and object.account.name != null
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_create_link_success_name_with_objname
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "create" and status = "failure" and subject = "account" and subject.account.name != null and object.account.name != null
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_create_link_failure_name_with_objname
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "remove" and status = "success" and subject = "account" and subject.account.name != null and object.account.name != null
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_remove_link_success_name_with_objname
+    - Criteria: id = "PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove" and action = "remove" and status = "failure" and subject = "account" and subject.account.name != null and object.account.name != null
+      LocalizationId: PT_UNIX_like_auditd_syslog_structured_syscall_remove_link_failure_name_with_objname
+
+ObjectId: PT-NF-6035
+ContentLabels:
+    - XDR_Compatible_unix
+
+
+########
+# raws: 1,13
+# Context_Exception: No exceptions
+# Level1: System Management
+# Context: Иные действия с сущностью
+# Level2_Group: Хранение и обработка информации
+# Level2: Link
+# Level3: Manipulation
+# Level3_Action: create
+# Action_Status: success
+# Interaction_Schema: Explicit Subject
+# Subject: account
+# Network_Layout: event_src
+########
+
+########
+# raws: 7,12
+# Context_Exception: No exceptions
+# Level1: System Management
+# Context: Иные действия с сущностью
+# Level2_Group: Хранение и обработка информации
+# Level2: Link
+# Level3: Manipulation
+# Level3_Action: create
+# Action_Status: success
+# Interaction_Schema: Implied Subject
+# Subject: no_subject
+# Network_Layout: event_src
+########
+
+########
+# raws: 11
+# Context_Exception: No exceptions
+# Level1: System Management
+# Context: Иные действия с сущностью
+# Level2_Group: Хранение и обработка информации
+# Level2: Link
+# Level3: Manipulation
+# Level3_Action: create
+# Action_Status: failure
+# Interaction_Schema: Explicit Subject
+# Subject: account
+# Network_Layout: event_src
+########
+
+########
+# raws: 3
+# Context_Exception: No exceptions
+# Level1: System Management
+# Context: Иные действия с сущностью
+# Level2_Group: Хранение и обработка информации
+# Level2: Link
+# Level3: Manipulation
+# Level3_Action: remove
+# Action_Status: success
+# Interaction_Schema: Explicit Subject
+# Subject: account
+# Network_Layout: event_src
+########
+
+########
+# raws: 2,4-6,17
+# Context_Exception: No exceptions
+# Level1: System Management
+# Context: Иные действия с сущностью
+# Level2_Group: Хранение и обработка информации
+# Level2: File System Object
+# Level3: Manipulation
+# Level3_Action: remove
+# Action_Status: success
+# Interaction_Schema: Explicit Subject
+# Subject: account
+# Network_Layout: event_src
+########
+
+########
+# raws: 8,15,16,18
+# Context_Exception: No exceptions
+# Level1: System Management
+# Context: Иные действия с сущностью
+# Level2_Group: Хранение и обработка информации
+# Level2: File System Object
+# Level3: Manipulation
+# Level3_Action: remove
+# Action_Status: success
+# Interaction_Schema: Implied Subject
+# Subject: no_subject
+# Network_Layout: event_src
+########
+
+########
+# raws: 9,10
+# Context_Exception: No exceptions
+# Level1: System Management
+# Context: Иные действия с сущностью
+# Level2_Group: Хранение и обработка информации
+# Level2: File System Object
+# Level3: Manipulation
+# Level3_Action: remove
+# Action_Status: failure
+# Interaction_Schema: Explicit Subject
+# Subject: account
+# Network_Layout: event_src
+########
+
+########
+# raws: 14
+# Context_Exception: No exceptions
+# Level1: System Management
+# Context: Иные действия с сущностью
+# Level2_Group: Хранение и обработка информации
+# Level2: File System Object
+# Level3: Manipulation
+# Level3_Action: remove
+# Action_Status: failure
+# Interaction_Schema: Implied Subject
+# Subject: no_subject
+# Network_Layout: event_src
+########
+ContentAutoName: PT_UNIX_like_auditd_syslog_structured_syscall_link_create_remove
+
+ContentRelations:
+    Uses:
+        SIEMKB:
+            Auto:
+                EventSources:
+                    PT-ES-24: UNIX_like_Auditd
