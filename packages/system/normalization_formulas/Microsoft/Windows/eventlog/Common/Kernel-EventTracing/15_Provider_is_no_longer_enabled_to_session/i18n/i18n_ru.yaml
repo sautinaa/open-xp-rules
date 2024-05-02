@@ -1,0 +1,4 @@
+Description: 'Провайдер удален из сессии'
+EventDescriptions:
+    - LocalizationId: 'LOC_Microsoft_Title_eventlog_event_name_1'
+      EventDescription: 'Провайдер {subject.id} удален из сессии "{object.name}"'

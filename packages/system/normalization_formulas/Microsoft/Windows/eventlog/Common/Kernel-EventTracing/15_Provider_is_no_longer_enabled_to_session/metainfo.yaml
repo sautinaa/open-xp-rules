@@ -1,8 +1,8 @@
 EventDescriptions:
-    - Criteria: id = "Microsoft_Windows_eventlog_Common_EventTracing_14_Provider_has_been_enabled_to_session"
+    - Criteria: id = "Microsoft_Windows_eventlog_Common_EventTracing_15_Provider_is_no_longer_enabled_to_session"
       LocalizationId: LOC_Microsoft_Title_eventlog_event_name_1
 ExpertContext:
-    Created: 25.04.2024
+    Created: 02.05.2024
     Updated: 02.05.2024
     KnowledgeHolders:
         - driverenok
@@ -10,4 +10,4 @@ ExpertContext:
     Falsepositives: []
     References: []
     Improvements: []
-ObjectId: LOC-NF-213259606
+ObjectId: SEC-NF-937069138

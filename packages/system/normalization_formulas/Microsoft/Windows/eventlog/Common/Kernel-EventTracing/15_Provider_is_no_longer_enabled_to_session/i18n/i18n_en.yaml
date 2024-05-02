@@ -1,0 +1,4 @@
+Description: 'A provider is no longer enabled to session'
+EventDescriptions:
+    - LocalizationId: 'LOC_Microsoft_Title_eventlog_event_name_1'
+      EventDescription: 'Provider {subject.id} is no longer enabled to session "{object.name}"'

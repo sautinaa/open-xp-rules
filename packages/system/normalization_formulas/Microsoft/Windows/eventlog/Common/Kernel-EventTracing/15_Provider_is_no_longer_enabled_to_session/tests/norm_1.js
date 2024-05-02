@@ -1,0 +1,21 @@
+{
+    "action": "modify",
+    "event_src.category": "Host security",
+    "event_src.fqdn": "win10-work.stand2008.local",
+    "event_src.hostname": "win10-work",
+    "event_src.subsys": "Microsoft-Windows-Kernel-EventTracing/Analytic",
+    "event_src.title": "windows",
+    "event_src.vendor": "microsoft",
+    "id": "Microsoft_Windows_eventlog_Common_EventTracing_15_Provider_is_no_longer_enabled_to_session",
+    "importance": "info",
+    "msgid": "15",
+    "object": "logging",
+    "object.name": "sysmondnsetwsession",
+    "object.type": "session",
+    "status": "success",
+    "subject": "application",
+    "subject.id": "{1c95126e-7eea-49a9-a3fe-a378b03ddb4d}",
+    "subject.state": "disabled",
+    "subject.type": "provider",
+    "time": "2024-05-02T11:12:15.278Z"
+}
