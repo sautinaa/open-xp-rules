@@ -1,7 +1,7 @@
 {
     "action": "stop",
     "datafield1": "8388864",
-    "event_src.category": "Host security",
+    "event_src.category": "Operating system",
     "event_src.fqdn": "win10-work.stand2008.local",
     "event_src.hostname": "win10-work",
     "event_src.subsys": "Microsoft-Windows-Kernel-EventTracing/Analytic",
@@ -11,10 +11,10 @@
     "importance": "info",
     "msgid": "11",
     "object": "logging",
-    "object.id": "{b1379529-6020-4a46-9396-d953051bf663}",
+    "object.id": "b1379529-6020-4a46-9396-d953051bf663",
     "object.name": "sysmondnsetwsession",
+    "object.state": "stopped",
     "object.type": "session",
     "status": "success",
-    "subject": "application",
     "time": "2024-04-25T15:17:18.151Z"
 }

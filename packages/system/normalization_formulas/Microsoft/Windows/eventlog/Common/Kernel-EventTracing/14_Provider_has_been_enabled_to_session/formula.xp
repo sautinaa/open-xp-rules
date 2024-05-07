@@ -1,7 +1,6 @@
 EVENTLOG = 'EventID="14"'
 COND = find_substr($Channel, "Analytic") != null and $Provider["Name"] == "Microsoft-Windows-Kernel-EventTracing"
 
-subject = "application"
 action = "modify"
 object = "logging"
 status = "success"
@@ -12,22 +11,18 @@ time = $TimeCreated["SystemTime"]
 
 importance = "info"
 
-subject.type = "provider"
-subject.id = lower($Data["ProviderName"])
-subject.name = $subject.id
-subject.state = "enabled"
-
 object.type = "session"
 object.name = lower($Data["SessionName"])
+object.state = "updated"
 
-## MatchAnyKeyword
-datafield1 = $Data["MatchAnyKeyword"]
-## MatchAllKeyword
-datafield2 = $Data["MatchAllKeyword"]
-## EnableProperty
-datafield3 = $Data["EnableProperty"]
-## Level
-datafield4 = $Data["Level"]
+datafield1 = "provider"
+datafield2 = lower($Data["ProviderName"])           # ProviderName
+datafield3 = strip($Data["ProviderName"], '{', '}') # ProviderGuid
+datafield4 = "enabled"
+datafield5 = $Data["MatchAnyKeyword"]               # MatchAnyKeyword
+datafield6 = $Data["MatchAllKeyword"]               # MatchAllKeyword
+datafield6 = $Data["EnableProperty"]                # EnableProperty
+datafield7 = $Data["Level"]                         # Level
 
 event_src.vendor = "microsoft"
 event_src.title = "windows"
@@ -39,6 +34,6 @@ if $first_dot != null then
 else
     event_src.hostname = lower($Computer)
 endif
-event_src.category = "Host security"
+event_src.category = "Operating system"
 
 id = "Microsoft_Windows_eventlog_Common_EventTracing_14_Provider_has_been_enabled_to_session"

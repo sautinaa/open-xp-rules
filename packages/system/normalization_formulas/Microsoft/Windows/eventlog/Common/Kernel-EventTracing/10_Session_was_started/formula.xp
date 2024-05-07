@@ -1,7 +1,6 @@
 EVENTLOG = 'EventID="10"'
 COND = find_substr($Channel, "Analytic") != null and $Provider["Name"] == "Microsoft-Windows-Kernel-EventTracing"
 
-subject = "application"
 action = "start"
 object = "logging"
 status = "success"
@@ -14,12 +13,11 @@ importance = "info"
 
 object.type = "session"
 object.name = lower($Data["SessionName"])
-object.id = lower($Data["SessionGuid"])
+object.id = strip($Data["SessionGuid"], '{', '}')
+object.state = "started"
 
-## LoggerMode
-datafield1 = $Data["LoggerMode"]
-## LogFileName
-datafield2 = $Data["LogFileName"]
+datafield1 = $Data["LoggerMode"]  # LoggerMode
+datafield2 = $Data["LogFileName"] # LogFileName
 
 event_src.vendor = "microsoft"
 event_src.title = "windows"
@@ -31,6 +29,6 @@ if $first_dot != null then
 else
     event_src.hostname = lower($Computer)
 endif
-event_src.category = "Host security"
+event_src.category = "Operating system"
 
 id = "Microsoft_Windows_eventlog_Common_EventTracing_10_Session_was_started"

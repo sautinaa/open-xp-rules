@@ -1,7 +1,6 @@
 EVENTLOG = 'EventID="8"'
 COND = find_substr($Channel, "Analytic") != null and $Provider["Name"] == "Microsoft-Windows-Kernel-EventTracing"
 
-subject = "application"
 action = "create"
 object = "logging"
 status = "success"
@@ -14,7 +13,8 @@ importance = "info"
 
 object.type = "provider"
 object.name = lower($Data["ProviderName"])
-object.id = $object.name
+object.id = strip($Data["ProviderName"], '{', '}')
+object.state = "registered"
 
 event_src.vendor = "microsoft"
 event_src.title = "windows"
@@ -26,6 +26,6 @@ if $first_dot != null then
 else
     event_src.hostname = lower($Computer)
 endif
-event_src.category = "Host security"
+event_src.category = "Operating system"
 
 id = "Microsoft_Windows_eventlog_Common_EventTracing_8_Provider_was_registered_with_ETW"

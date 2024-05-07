@@ -1,6 +1,10 @@
 {
     "action": "modify",
-    "event_src.category": "Host security",
+    "datafield1": "provider",
+    "datafield2": "{1c95126e-7eea-49a9-a3fe-a378b03ddb4d}",
+    "datafield3": "1c95126e-7eea-49a9-a3fe-a378b03ddb4d",
+    "datafield4": "disabled",
+    "event_src.category": "Operating system",
     "event_src.fqdn": "win10-work.stand2008.local",
     "event_src.hostname": "win10-work",
     "event_src.subsys": "Microsoft-Windows-Kernel-EventTracing/Analytic",
@@ -11,11 +15,8 @@
     "msgid": "15",
     "object": "logging",
     "object.name": "sysmondnsetwsession",
+    "object.state": "updated",
     "object.type": "session",
     "status": "success",
-    "subject": "application",
-    "subject.id": "{1c95126e-7eea-49a9-a3fe-a378b03ddb4d}",
-    "subject.state": "disabled",
-    "subject.type": "provider",
     "time": "2024-05-02T11:12:15.278Z"
 }

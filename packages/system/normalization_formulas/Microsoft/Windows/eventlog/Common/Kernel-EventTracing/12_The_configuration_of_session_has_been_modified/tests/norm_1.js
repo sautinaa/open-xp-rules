@@ -1,7 +1,7 @@
 {
     "action": "modify",
     "datafield1": "41943296",
-    "event_src.category": "Host security",
+    "event_src.category": "Operating system",
     "event_src.fqdn": "win10-work.stand2008.local",
     "event_src.hostname": "win10-work",
     "event_src.subsys": "Microsoft-Windows-Kernel-EventTracing/Analytic",
@@ -11,10 +11,10 @@
     "importance": "info",
     "msgid": "12",
     "object": "logging",
-    "object.id": "{ddd7f2a4-084b-11ef-912e-52540074b02b}",
+    "object.id": "ddd7f2a4-084b-11ef-912e-52540074b02b",
     "object.name": "sysmon trace",
+    "object.state": "updated",
     "object.type": "session",
     "status": "success",
-    "subject": "application",
     "time": "2024-05-02T13:24:55.328Z"
 }
