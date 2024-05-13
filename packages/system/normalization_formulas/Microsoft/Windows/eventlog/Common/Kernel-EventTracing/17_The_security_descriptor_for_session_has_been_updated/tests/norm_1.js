@@ -14,6 +14,7 @@
     "object": "logging",
     "object.id": "d2112be4-cd15-5a9c-e38f-080a207e08d5",
     "object.name": "eventlog-system",
+    "object.property": "security descriptor",
     "object.state": "updated",
     "object.type": "session",
     "status": "success",

@@ -13,7 +13,6 @@ importance = "info"
 
 object.type = "session"
 object.name = lower($Data["SessionName"])
-object.state = "updated"
 
 datafield1 = "provider"
 datafield2 = lower($Data["ProviderName"])           # ProviderName

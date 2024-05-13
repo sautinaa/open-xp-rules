@@ -16,7 +16,6 @@
     "msgid": "15",
     "object": "logging",
     "object.name": "sysmondnsetwsession",
-    "object.state": "updated",
     "object.type": "session",
     "status": "success",
     "time": "2024-05-02T11:12:15.278Z"

@@ -14,7 +14,6 @@
     "object": "logging",
     "object.id": "ddd7f2a4-084b-11ef-912e-52540074b02b",
     "object.name": "sysmon trace",
-    "object.state": "updated",
     "object.type": "session",
     "status": "success",
     "time": "2024-05-02T13:24:55.328Z"

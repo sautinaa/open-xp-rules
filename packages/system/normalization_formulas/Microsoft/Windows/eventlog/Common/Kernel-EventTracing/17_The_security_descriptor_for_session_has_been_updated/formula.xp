@@ -14,6 +14,7 @@ importance = "info"
 object.type = "session"
 object.name = lower($Data["SessionName"])
 object.id = strip($Data["SessionGuid"], '{', '}')
+object.property = "security descriptor"
 object.state = "updated"
 
 datafield1 = $Data["LoggerMode"]  # LoggerMode
