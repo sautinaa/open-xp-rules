@@ -1,0 +1,6 @@
+Description: 'Обнаружена ошибка в работе Sysmon'
+EventDescriptions:
+    - LocalizationId: 'LOC_Microsoft_Title_eventlog_event_name_1'
+      EventDescription: 'Обнаружена ошибка во взимодействии между службой Sysmon64 и драйвером SysmonDrv'
+    - LocalizationId: 'normalization_255_Error_report_2'
+      EventDescription: 'Обнаружена ошибка записи событий Sysmon в журнал безопасности'

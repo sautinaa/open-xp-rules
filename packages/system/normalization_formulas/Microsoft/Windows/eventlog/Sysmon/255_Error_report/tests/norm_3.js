@@ -1,0 +1,21 @@
+{
+    "action": "create",
+    "datafield1": "GetConfigurationOptions",
+    "datafield2": "Failed to open service configuration with error 94 - Last error: Носитель защищен от записи.",
+    "event_src.category": "Operating system",
+    "event_src.fqdn": "win10-work.stand2008.local",
+    "event_src.hostname": "win10-work",
+    "event_src.id": "5770385f-c22a-43e0-bf4c-06f5698ffbd9",
+    "event_src.subsys": "Microsoft-Windows-Sysmon/Operational",
+    "event_src.title": "Microsoft-Windows-Sysmon",
+    "event_src.vendor": "microsoft",
+    "id": "Microsoft_Windows_eventlog_Sysmon_255_Error_report",
+    "importance": "medium",
+    "msgid": "255",
+    "object": "logging",
+    "status": "failure",
+    "subject": "application",
+    "subject.name": "Sysmon",
+    "subject.type": "service",
+    "time": "2024-05-21T10:12:29.740Z"
+}
