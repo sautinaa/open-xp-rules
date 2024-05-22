@@ -2,10 +2,8 @@ EVENTLOG = 'EventID="255"'
 
 COND = $Provider["Name"] == "Microsoft-Windows-Sysmon"
 
-subject = "application"
-action = "create"
-object = "logging"
-status = "failure"
+action = "alert"
+object = "application"
 
 msgid = $EventID
 
@@ -13,17 +11,13 @@ importance = "medium"
 
 time = $TimeCreated["SystemTime"]
 
-subject.type = "service"
-subject.name = "Sysmon"
+object.name = $Data["ID"]
 
-datafield1 = $Data["ID"]          # ID
-datafield2 = $Data["Description"] # Description
+reason = $Data["Description"]
 
 event_src.vendor = "microsoft"
-event_src.title = "windows"
+event_src.title = "sysmon"
 event_src.subsys = $Channel
-event_src.title = $Provider["Name"]
-event_src.id = strip($Provider["Guid"], '{', '}')
 $first_dot = find_substr($Computer, '.')
 if $first_dot != null then
     event_src.fqdn = lower($Computer)
@@ -31,6 +25,6 @@ if $first_dot != null then
 else
     event_src.hostname = lower($Computer)
 endif
-event_src.category = "Operating system"
+event_src.category = "Other"
 
 id = "Microsoft_Windows_eventlog_Sysmon_255_Error_report"
