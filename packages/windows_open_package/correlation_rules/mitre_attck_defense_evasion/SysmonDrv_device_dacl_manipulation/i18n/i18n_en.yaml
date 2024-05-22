@@ -1,0 +1,6 @@
+Description: 'An attempt was detected to modify the DACL of SysmonDrv device'
+EventDescriptions:
+    - LocalizationId: 'corrname_SysmonDrv_device_dacl_manipulation'
+      EventDescription: 'The process "{subject.process.name}" tried to modify the DACL of SysmonDrv device'
+    - LocalizationId: 'corrname_SysmonDrv_device_dacl_manipulation_2'
+      EventDescription: 'The process "{subject.process.name}" modified the DACL for the SysmonDrv device'
