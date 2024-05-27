@@ -18,7 +18,8 @@ reason = $Data["Description"]
 
 event_src.vendor = "microsoft"
 event_src.title = "sysmon"
-event_src.subsys = $Channel
+event_src.subsys = $Channel  
+event_src.id = $Provider["Name"]
 $first_dot = find_substr($Computer, '.')
 if $first_dot != null then
     event_src.fqdn = lower($Computer)
