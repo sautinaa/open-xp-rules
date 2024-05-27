@@ -12,5 +12,6 @@
     "object": "application",
     "object.name": "DriverCommunication",
     "reason": "Failed to retrieve events - Last error: Параметр задан неверно.",
+    "status": "success",
     "time": "2024-04-21T18:52:29.286Z"
 }

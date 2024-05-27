@@ -12,5 +12,6 @@
     "object": "application",
     "object.name": "GetConfigurationOptions",
     "reason": "Failed to open service configuration with error 94 - Last error: Носитель защищен от записи.",
+    "status": "success",
     "time": "2024-05-21T10:12:29.740Z"
 }

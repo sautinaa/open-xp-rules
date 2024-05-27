@@ -12,5 +12,6 @@
     "object": "application",
     "object.name": "DriverCommunication",
     "reason": "Failed to access the driver - Last error: Неверный дескриптор.",
+    "status": "success",
     "time": "2024-05-21T09:56:34.877Z"
 }

@@ -4,6 +4,7 @@ COND = $Provider["Name"] == "Microsoft-Windows-Sysmon"
 
 action = "alert"
 object = "application"
+status = "success"
 
 msgid = $EventID
 
