@@ -1,4 +1,4 @@
-event SysmonDrv_HandleRequered:
+event SysmonDrv_HandleRequired:
     key:
         event_src.host, subject.process.id
     filter {
@@ -33,9 +33,9 @@ event SysmonDrv_DaclModified:
         lower(object.name) == "sysmondrv"
     }
 
-rule SysmonDrv_device_dacl_manipulation: SysmonDrv_HandleRequered or SysmonDrv_ObjectAccess or SysmonDrv_DaclModified
+rule SysmonDrv_device_dacl_manipulation: SysmonDrv_HandleRequired or SysmonDrv_ObjectAccess or SysmonDrv_DaclModified
 
-    on SysmonDrv_HandleRequered {
+    on SysmonDrv_HandleRequired {
         # subject
         $subject = "process"
 

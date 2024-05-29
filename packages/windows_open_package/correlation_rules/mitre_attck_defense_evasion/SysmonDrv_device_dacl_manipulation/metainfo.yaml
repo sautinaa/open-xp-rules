@@ -1,11 +1,11 @@
 ContentAutoName: SysmonDrv_device_dacl_manipulation
 ExpertContext:
     Created: 22.05.2024
-    Updated: 22.05.2024
+    Updated: 28.05.2024
     KnowledgeHolders:
         - driverenok
     Usecases:
-        - Вредонос может попытаться нарушить коммуникацию между службой режима пользователя Sysmon64 и драйвером SysmonDrv чтобы ослепить мониторинг
+        - Вредонос может попытаться нарушить коммуникацию между службой режима пользователя Sysmon64 и драйвером SysmonDrv чтобы ослепить мониторинг путем манипуляций со списком DACL девайса SysmonDrv
     Falsepositives: []
     References:
         - https://attack.mitre.org/techniques/T1562/
