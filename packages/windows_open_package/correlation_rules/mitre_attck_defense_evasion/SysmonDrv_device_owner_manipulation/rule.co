@@ -15,7 +15,6 @@ rule SysmonDrv_device_owner_manipulation: SysmonDrv_OwnerModified
 
     on SysmonDrv_OwnerModified {
         # subject
-
         $subject = "process"
 
         $subject.account.name = subject.account.name

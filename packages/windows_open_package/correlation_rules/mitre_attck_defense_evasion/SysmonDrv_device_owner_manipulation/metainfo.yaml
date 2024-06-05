@@ -1,11 +1,11 @@
 ContentAutoName: SysmonDrv_device_owner_manipulation
 ExpertContext:
     Created: 22.05.2024
-    Updated: 22.05.2024
+    Updated: 05.06.2024
     KnowledgeHolders:
         - driverenok
     Usecases:
-        - Вредонос может попытаться нарушить коммуникацию между службой режима пользователя Sysmon64 и драйвером SysmonDrv чтобы ослепить мониторинг
+        - Атакующий может попытаться нарушить коммуникацию между службой режима пользователя Sysmon64 и драйвером SysmonDrv чтобы ослепить мониторинг
     Falsepositives: []
     References:
         - https://attack.mitre.org/techniques/T1562/
