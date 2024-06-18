@@ -6,7 +6,7 @@ ExpertContext:
         - Kirill Kiryanov
     Usecases:
         - Атакующие могут использовать команду find-internet-password/find-generic-password для получения пароля в кодировке base64
-        - Атакующие могут использовать команду dump-keychain чтобы сделать копию хранилища паролей для передачи на другой узел
+        - Атакующие могут использовать команду dump-keychain чтобы сделать копию хранилища паролей для передачи на другой узел или же просто прочесть
     Falsepositives: []
     References:
         - https://unit42.paloaltonetworks.com/mac-malware-steals-cryptocurrency-exchanges-cookies/

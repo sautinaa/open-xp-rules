@@ -9,7 +9,7 @@ event Process_Start:
         and lower(object.process.fullpath) == "/usr/bin/security"
         and (
             regex(lower(object.process.cmdline), "find-(generic|internet)-password", 0) != null
-            # Атакующий может сдампить хранилище ключей для эксфильтрации данных на свой узел
+            # Атакующий может сдампить хранилище ключей для эксфильтрации данных на свой узел или просто прочесть содержимое
             or find_substr(lower(object.process.cmdline), "dump-keychain") != null
             )
     }
