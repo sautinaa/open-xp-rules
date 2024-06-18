@@ -112,9 +112,9 @@ rule Credentials_Validation_via_Dscl: PasswordValidation_Via_Dscl_Event
         $category.high = "Discovery"
 
         if $reason == "." then
-            $category.low = "Valid Accounts: Local Accounts"
+            $category.low = "Account Discovery: Local Accounts"
         else
-            $category.low = "Valid Accounts: Domain Accounts"
+            $category.low = "Account Discovery: Domain Accounts"
         endif
         
         $incident.aggregation.key = join([$correlation_name, $event_src.host, $subject.account.id], "|")
