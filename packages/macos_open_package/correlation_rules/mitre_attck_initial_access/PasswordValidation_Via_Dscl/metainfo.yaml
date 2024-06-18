@@ -1,0 +1,30 @@
+ContentAutoName: PasswordValidation_Via_Dscl
+ExpertContext:
+    Created: 18.06.2024
+    Updated: 18.06.2024
+    KnowledgeHolders:
+        - Dmitry Fedosov
+    Usecases:
+        - Подозрительная валидация учетных данных с помощью штатной утилиты /usr/bin/dscl
+    Falsepositives:
+        - Нештатные решения разработчиков по валидации учетных данных
+    References:
+        - https://ss64.com/mac/dscl.html
+        - https://community.jamf.com/t5/jamf-pro/validate-local-user-password/m-p/303653
+        - https://stackoverflow.com/questions/7081417/how-do-i-determine-if-a-user-has-a-password-set-on-mac
+    Improvements: []
+    DataSources:
+        - Provider: MacOS
+          EventID:
+              - es_logger_process_execution
+ObjectId: SEC-CR-156432371
+ContentRelations:
+    Implements:
+        ATTACK:
+            initial-access:
+                - T1078.003
+EventDescriptions:
+    - Criteria: correlation_name = "PasswordValidation_Via_Dscl" and reason = "."
+      LocalizationId: corrname_PasswordValidation_Via_Dscl
+    - Criteria: correlation_name = "PasswordValidation_Via_Dscl"
+      LocalizationId: corrname_PasswordValidation_Via_Dscl_2
