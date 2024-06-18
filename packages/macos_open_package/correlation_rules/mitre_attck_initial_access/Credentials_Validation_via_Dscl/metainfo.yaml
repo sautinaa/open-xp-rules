@@ -22,8 +22,8 @@ ContentRelations:
     Implements:
         ATTACK:
             discovery:
-                - T1078.001
-                - T1078.002
+                - T1087.001
+                - T1087.002
 EventDescriptions:
     - Criteria: correlation_name = "Credentials_Validation_via_Dscl" and reason = "."
       LocalizationId: corrname_Credentials_Validation_via_Dscl
