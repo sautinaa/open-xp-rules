@@ -11,7 +11,7 @@ event PasswordValidation_Via_Dscl_Event:
     }
 
 
-rule PasswordValidation_Via_Dscl: PasswordValidation_Via_Dscl_Event
+rule Credentials_Validation_via_Dscl: PasswordValidation_Via_Dscl_Event
 
     init {
         $labels = "w_auto"
@@ -110,7 +110,12 @@ rule PasswordValidation_Via_Dscl: PasswordValidation_Via_Dscl_Event
 
         $category.generic = "Attack"
         $category.high = "Initial Access"
-        $category.low = "Valid Accounts: Local Accounts"
+
+        if $reason == "." then
+            $category.low = "Valid Accounts: Local Accounts"
+        else
+            $category.low = "Valid Accounts: Domain Accounts"
+        endif
         
         $incident.aggregation.key = join([$correlation_name, $event_src.host, $subject.account.id], "|")
         $incident.severity = $importance

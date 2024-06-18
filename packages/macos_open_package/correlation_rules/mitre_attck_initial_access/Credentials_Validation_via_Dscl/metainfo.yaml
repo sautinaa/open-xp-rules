@@ -1,4 +1,4 @@
-ContentAutoName: PasswordValidation_Via_Dscl
+ContentAutoName: Credentials_Validation_via_Dscl
 ExpertContext:
     Created: 18.06.2024
     Updated: 18.06.2024
@@ -24,7 +24,7 @@ ContentRelations:
             initial-access:
                 - T1078.003
 EventDescriptions:
-    - Criteria: correlation_name = "PasswordValidation_Via_Dscl" and reason = "."
-      LocalizationId: corrname_PasswordValidation_Via_Dscl
-    - Criteria: correlation_name = "PasswordValidation_Via_Dscl"
-      LocalizationId: corrname_PasswordValidation_Via_Dscl_2
+    - Criteria: correlation_name = "Credentials_Validation_via_Dscl" and reason = "."
+      LocalizationId: corrname_Credentials_Validation_via_Dscl
+    - Criteria: correlation_name = "Credentials_Validation_via_Dscl"
+      LocalizationId: corrname_Credentials_Validation_via_Dscl_2
