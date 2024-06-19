@@ -14,16 +14,13 @@
 			}
 		}
 	},
-	"postCreateCommand": "wget https://github.com/vxcontrol/xp-kbt/releases/download/26.2.4391/kbt.26.2.4391-debian-10.zip -O /tmp/xp-kbt.zip && unzip /tmp/xp-kbt.zip -d /tmp/xp-kbt"
+	"postCreateCommand": "wget $(curl -s https://api.github.com/repos/vxcontrol/xp-kbt/releases/latest | jq -r '.assets[] | select(.name | contains(\"debian\")).browser_download_url') -O /tmp/xp-kbt.zip && unzip /tmp/xp-kbt.zip -d /tmp/xp-kbt"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
-	// Configure tool-specific properties.
-	// "customizations": {},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
