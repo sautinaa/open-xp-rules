@@ -14,7 +14,7 @@
 			}
 		}
 	},
-	"postCreateCommand": "wget $(curl -s https://api.github.com/repos/vxcontrol/xp-kbt/releases/latest | jq -r '.assets[] | select(.name | contains(\"debian\")).browser_download_url') -O /tmp/xp-kbt.zip && unzip /tmp/xp-kbt.zip -d /tmp/xp-kbt"
+	"postCreateCommand": "wget $(curl -s https://api.github.com/repos/vxcontrol/xp-kbt/releases/latest | jq -r '.assets[] | select(.name | contains(\"debian\")).browser_download_url') -O /tmp/xp-kbt.zip && unzip -o /tmp/xp-kbt.zip -d /tmp/xp-kbt"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
