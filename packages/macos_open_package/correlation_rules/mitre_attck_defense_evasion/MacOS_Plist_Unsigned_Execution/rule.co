@@ -1,17 +1,40 @@
-
-event File_Execution:
+event Process_Execution:
+    key:
+        event_src.host, object.process.name       
     filter {
         filter::NotFromCorrelator()
-        and not match(lower(datafield17), ("com.apple*")) 
         and action == "execute"
         and object == "process"
         and msgid == "9"
-        and match(lower(datafield10), "*com.apple.launchd*")
+        and subject.process.name == 'launchd'
     }
 
 
-rule MacOS_Plist_Unsigned_Execution: File_Execution 
+event File_Execution:
+    key:
+        event_src.host, subject.process.name 
+    filter {
+        filter::NotFromCorrelator()
+        and action == "execute"
+        and object == "process"
+        and msgid == "9" 
+        and (
+            mod(div(number(datafield18),2),2) == 1
+            or number(datafield18) == 0
+        ) 
+    }
+
+
+
+
+
+rule MacOS_Plist_Unsigned_Execution: Process_Execution and File_Execution
     
+    on Process_Execution{
+       $alert.context = object.process.cmdline
+       $subject.process.cmdline = object.process.cmdline 
+    }
+        
     on File_Execution {
 
         $datafield1 = datafield1
