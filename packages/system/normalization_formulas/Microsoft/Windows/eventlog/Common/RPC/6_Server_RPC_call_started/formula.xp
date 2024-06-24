@@ -39,7 +39,6 @@ datafield4 = $Data["ImpersonationLevel"]    # ImpersonationLevel
 event_src.vendor = "microsoft"
 event_src.title = "windows"
 event_src.subsys = "rpc"
-event_src.title = $Provider["Name"]
 event_src.id = strip($Provider["Guid"], '{', '}')
 $first_dot = find_substr($Computer, '.')
 if $first_dot != null then

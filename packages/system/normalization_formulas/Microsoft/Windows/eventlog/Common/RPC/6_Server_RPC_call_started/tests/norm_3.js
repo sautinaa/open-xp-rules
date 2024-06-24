@@ -9,7 +9,7 @@
     "event_src.hostname": "laptop-ju4m3i0e",
     "event_src.id": "6ad52b32-d609-4be9-ae07-ce8dae937e39",
     "event_src.subsys": "rpc",
-    "event_src.title": "Microsoft-Windows-RPC",
+    "event_src.title": "windows",
     "event_src.vendor": "microsoft",
     "id": "Microsoft_Windows_eventlog_Common_RPC_6_Server_RPC_call_started",
     "importance": "info",
