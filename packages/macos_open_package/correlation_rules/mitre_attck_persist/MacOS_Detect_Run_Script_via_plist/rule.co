@@ -22,8 +22,8 @@ event Script_Execute:
         and action == "execute"
         and lower(subject.process.fullpath) == "/usr/libexec/xpcproxy"
         and (
-            regex(lower(datafield17), "com\.apple\.(sh|bash|zsh)", 0) != null
-            or regex(lower(object.process.cmdline), "(\/usr\/(local\/)?bin\/(env\s+python|python[0-9\.]*|perl|ruby|php|awk|sed))\s+.*", 0) != null
+            regex(lower(datafield17), "com\.apple\.(sh|bash|zsh|ksh|dash|tcsh|tclsh)", 0) != null
+            or regex(lower(object.process.cmdline), "(\/bin\/(bash|sh|zsh|ksh|dash))|(\/usr\/(local\/)?bin\/(env\s+python|python[0-9\.]*|perl|ruby|php|awk|sed|osascript|javascript|java|curl|wget|tcsh|tclsh|wish))\s+.*", 0) != null
             )
     }
 
