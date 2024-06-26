@@ -8,6 +8,7 @@
     "event_src.vendor": "microsoft",
     "id": "Microsoft_Windows_eventlog_Common_System_5805_The_session_setup_from_the_computer_failed_to_authenticate",
     "importance": "medium",
+    "msgid": "5805",
     "object": "system",
     "status": "failure",
     "subject": "account",

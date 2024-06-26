@@ -6,7 +6,7 @@ action = "login"
 object = "system"
 status = "failure"
 
-msgid = $EventID
+msgid = $EventID["text"]
 
 time = $TimeCreated["SystemTime"]
 
