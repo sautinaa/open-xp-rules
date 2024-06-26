@@ -1,0 +1,4 @@
+Description: 'Ошибка проверки подлинности для сеанса компьютера'
+EventDescriptions:
+    - LocalizationId: 'LOC_Microsoft_Title_eventlog_event_name_1'
+      EventDescription: 'Не удалось выполнить проверку подлинности для сеанса компьютера {subject.account.name} на узле {event_src.host}'
