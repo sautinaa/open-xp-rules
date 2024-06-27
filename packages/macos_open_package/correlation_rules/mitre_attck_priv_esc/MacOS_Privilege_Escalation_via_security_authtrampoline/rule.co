@@ -24,7 +24,11 @@ event Process_Start_with_Elevated_Privileges:
         and datafield1 == "0"
     }
 
-rule MacOS_Privilege_Escalation_via_security_authtrampoline: Process_Start -> Process_Start_with_Elevated_Privileges? timer 30s
+rule MacOS_Privilege_Escalation_via_security_authtrampoline: (Process_Start+ -> Process_Start_with_Elevated_Privileges?) timeout_timer 60s
+
+    init {
+        $count.subevents = 0
+    }
 
     on Process_Start {
         $action = action
@@ -107,13 +111,13 @@ rule MacOS_Privilege_Escalation_via_security_authtrampoline: Process_Start -> Pr
         $datafield16 = datafield16
         $datafield17 = datafield17
         $datafield18 = datafield18
-        $datafield19 = datafield7
-        $datafield20 = regex(lower(object.process.cmdline), "(\/usr\/libexec\/)?security_authtrampoline\s+(.*).\s+(auth\s+\d+)\s+(.*)", 0)
+        $datafield19 = datafield5
+        $datafield20 = datafield7
 
         $alert.context = lower(join([subject.account.id, datafield8, datafield7], "|"))
-        $alert.key = lower(join([regex(lower(object.process.cmdline), "(\/usr\/libexec\/)?security_authtrampoline\s+(.*).\s+(auth\s+\d+)\s+(.*)", 2), regex(lower(object.process.cmdline), "(\/usr\/libexec\/)?security_authtrampoline\s+(.*).\s+(auth\s+\d+)\s+(.*)", 4)], "|"))
-
-        $reason = "elevation-attempt"
+        $alert.key = lower(join([regex(lower(object.process.cmdline), "((\/usr\/libexec\/)?security_authtrampoline)\s+(.*)\s+(auth\s+\d+)\s+(.*)", 1), regex(lower(object.process.cmdline), "(\/usr\/libexec\/)?security_authtrampoline\s+(.*).\s+(auth\s+\d+)\s+(.*)", 4)], "|"))
+        $count.subevents = $count.subevents + 1
+        $reason = join([ "is-pre-installed: " + $datafield5, $count.subevents,"elevation-attempt"],"|")
     }
 
     on Process_Start_with_Elevated_Privileges {
@@ -199,7 +203,7 @@ rule MacOS_Privilege_Escalation_via_security_authtrampoline: Process_Start -> Pr
         $datafield18 = datafield18
 
         $alert.key = lower(join([subject.account.id, datafield1, object.process.cmdline], "|"))
-
+        $count.subevents = $count.subevents + 1
         $reason = "elevation-success"
     }
 
@@ -211,11 +215,9 @@ emit {
     $object = "process"
     $status = "success"
 
-    if $datafield5 == "true" then
-        $importance = "low"
-    elif $datafield5 == "false" and $reason == "elevation-attempt" then
-        $importance = "medium" 
-    elif $datafield5 == "false" and $reason == "elevation-success" then 
+    $importance = "medium" 
+
+    if $reason == "elevation-success" and $datafield2 == "false" then  
         $importance = "high"
     endif
 
