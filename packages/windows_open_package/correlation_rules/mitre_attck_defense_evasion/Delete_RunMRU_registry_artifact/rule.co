@@ -5,8 +5,7 @@ event DeleteRunMRU_RegReys:
         filter::NotFromCorrelator() and 
         lower(object) == "reg_object" and
         lower(action) == "remove" and
-        lower(object.name) == "runmru" and 
-        regex(lower(object.path),"\\\\software\\\\microsoft\\\\windows\\\\currentversion\\\\explorer.*", 0) != null
+        regex(lower(object.fullpath),"\\\\software\\\\microsoft\\\\windows\\\\currentversion\\\\explorer\\\\runmru.*", 0) != null
     }
 
 rule Delete_RunMRU_registry_artifact: DeleteRunMRU_RegReys
@@ -41,7 +40,7 @@ rule Delete_RunMRU_registry_artifact: DeleteRunMRU_RegReys
 
         # status
         $status = status
-        
+
         # event src host
         $event_src.host = event_src.host
         $event_src.fqdn = event_src.fqdn
