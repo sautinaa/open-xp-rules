@@ -117,7 +117,7 @@ rule MacOS_Privilege_Escalation_via_security_authtrampoline: (Process_Start+ -> 
         $alert.context = lower(join([subject.account.id, datafield8, datafield7], "|"))
         $alert.key = lower(join([regex(lower(object.process.cmdline), "((\/usr\/libexec\/)?security_authtrampoline)\s+(.*)\s+(auth\s+\d+)\s+(.*)", 1), regex(lower(object.process.cmdline), "(\/usr\/libexec\/)?security_authtrampoline\s+(.*).\s+(auth\s+\d+)\s+(.*)", 4)], "|"))
         $count.subevents = $count.subevents + 1
-        $reason = join([ "is-pre-installed: " + $datafield5, $count.subevents,"elevation-attempt"],"|")
+        $reason = "elevation-attempt"
     }
 
     on Process_Start_with_Elevated_Privileges {
