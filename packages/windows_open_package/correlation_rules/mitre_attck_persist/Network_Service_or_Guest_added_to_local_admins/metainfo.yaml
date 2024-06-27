@@ -22,6 +22,6 @@ ContentRelations:
     Implements:
         ATTACK:
             persistence:
-                - T1078.001
+                - T1098
             privilege-escalation:
                 - T1078.001
