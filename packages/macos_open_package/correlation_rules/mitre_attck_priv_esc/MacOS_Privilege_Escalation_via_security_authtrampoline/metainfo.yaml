@@ -1,17 +1,18 @@
 ContentAutoName: MacOS_Privilege_Escalation_via_security_authtrampoline
 ExpertContext:
     Created: 26.06.2024
-    Updated: 27.06.2024
+    Updated: 30.06.2024
     KnowledgeHolders:
         - Kirill Shamko
     Usecases:
-        - Злоумыленник может использовать AuthorizationExecuteWithPrivileges API для повышения привилегий, запрашивая ввод пароля у пользователя. Утилитой, использующей данный API, является security_authtrampoline. Любой запуск данной утилиты является подозрительным.
+        - Злоумыленник может использовать AuthorizationExecuteWithPrivileges API для повышения привилегий, запрашивая ввод пароля у пользователя. Утилитой, использующей данный API, является security_authtrampoline. Использование данной утилиты неподписанными исполняемыми файлами является подозрительным действием.
     Falsepositives: []
     References:
         - https://www.jamf.com/blog/detecting-insecure-application-updates-on-macos/
         - https://objective-see.org/blog/blog_0x55.html
         - https://theevilbit.github.io/posts/macos_authorization/#factored-applications-privileged-helper-tools
-    Improvements: []
+    Improvements:
+        - Детектирование успеха при попытке повышения привилегий
     DataSources:
         - Provider: MacOS
           EventID:
@@ -23,11 +24,5 @@ ContentRelations:
             privilege-escalation:
                 - T1548.004
 EventDescriptions:
-    - Criteria: correlation_name = "MacOS_Privilege_Escalation_via_security_authtrampoline" and reason = "elevation-success" and datafield19 = "false"
+    - Criteria: correlation_name = "MacOS_Privilege_Escalation_via_security_authtrampoline"
       LocalizationId: corrname_MacOS_Privilege_Escalation_via_security_authtrampoline
-    - Criteria: correlation_name = "MacOS_Privilege_Escalation_via_security_authtrampoline" and reason = "elevation-success" and datafield19 = "true"
-      LocalizationId: corrname_MacOS_Privilege_Escalation_via_security_authtrampoline_2
-    - Criteria: correlation_name = "MacOS_Privilege_Escalation_via_security_authtrampoline" and reason = "elevation-attempt" and datafield19 = "false"
-      LocalizationId: corrname_MacOS_Privilege_Escalation_via_security_authtrampoline_3
-    - Criteria: correlation_name = "MacOS_Privilege_Escalation_via_security_authtrampoline" and reason = "elevation-attempt" and datafield19 = "true"
-      LocalizationId: corrname_MacOS_Privilege_Escalation_via_security_authtrampoline_4

@@ -1,4 +1,19 @@
-event Process_Start:
+event Process_Start: 
+    key:
+        event_src.host
+    filter {
+        filter::NotFromCorrelator()
+        and action == "execute"
+        and object == "process"
+        and msgid == "9" 
+        and (
+            mod(div(number(datafield18),2),2) == 1
+            or number(datafield18) == 0
+        ) 
+    }
+
+
+event Process_Security_Authtrampoline_Start:
     key:
         event_src.host
     filter {
@@ -12,19 +27,8 @@ event Process_Start:
             )
     }
 
-event Process_Start_with_Elevated_Privileges: 
-    key:
-        event_src.host
-    filter {
-        filter::NotFromCorrelator()
-        and event_src.title == "edr"
-        and msgid == "9"
-        and action == "execute"
-        and lower(subject.process.fullpath) == "/usr/libexec/security_authtrampoline"
-        and datafield1 == "0"
-    }
 
-rule MacOS_Privilege_Escalation_via_security_authtrampoline: (Process_Start+ -> Process_Start_with_Elevated_Privileges?) timeout_timer 60s
+rule MacOS_Privilege_Escalation_via_security_authtrampoline: (Process_Start -> Process_Security_Authtrampoline_Start) timer 5s
 
     init {
         $count.subevents = 0
@@ -111,16 +115,11 @@ rule MacOS_Privilege_Escalation_via_security_authtrampoline: (Process_Start+ -> 
         $datafield16 = datafield16
         $datafield17 = datafield17
         $datafield18 = datafield18
-        $datafield19 = datafield5
-        $datafield20 = datafield7
 
-        $alert.context = lower(join([subject.account.id, datafield8, datafield7], "|"))
-        $alert.key = lower(join([regex(lower(object.process.cmdline), "((\/usr\/libexec\/)?security_authtrampoline)\s+(.*)\s+(auth\s+\d+)\s+(.*)", 1), regex(lower(object.process.cmdline), "(\/usr\/libexec\/)?security_authtrampoline\s+(.*).\s+(auth\s+\d+)\s+(.*)", 4)], "|"))
         $count.subevents = $count.subevents + 1
-        $reason = "elevation-attempt"
     }
 
-    on Process_Start_with_Elevated_Privileges {
+    on Process_Security_Authtrampoline_Start {
         $action = action
         $object = object
         $status = status
@@ -202,9 +201,10 @@ rule MacOS_Privilege_Escalation_via_security_authtrampoline: (Process_Start+ -> 
         $datafield17 = datafield17
         $datafield18 = datafield18
 
-        $alert.key = lower(join([subject.account.id, datafield1, object.process.cmdline], "|"))
+        $alert.context = lower(join([subject.account.id, datafield8, datafield7], "|"))
+        $alert.key = lower(join([regex(lower(object.process.cmdline), "((\/usr\/libexec\/)?security_authtrampoline)\s+(.*)\s+(auth\s+\d+)\s+(.*)", 1),regex(lower(object.process.cmdline), "((\/usr\/libexec\/)?security_authtrampoline)\s+(.*)\s+(auth\s+\d+)\s+(.*)", 3)], "|"))
         $count.subevents = $count.subevents + 1
-        $reason = "elevation-success"
+        $reason = "elevation-attempt"
     }
 
 emit {
@@ -215,11 +215,7 @@ emit {
     $object = "process"
     $status = "success"
 
-    $importance = "medium" 
-
-    if $reason == "elevation-success" and $datafield2 == "false" then  
-        $importance = "high"
-    endif
+    $importance = "high"
 
     $category.generic = "Attack"
     $category.high = "Privilege Escalation"
