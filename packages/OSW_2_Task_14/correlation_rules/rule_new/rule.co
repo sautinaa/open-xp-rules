@@ -5,7 +5,7 @@ event LAgent_CVE:
         filter::NotFromCorrelator()
         and msgid == "9"
         and action == "execute"
-        and regex(lower(object.process.cmdline), "launchctl.*?\/users\/user\/library\/launchagents\/com\.apple\..*?\.plist", 0) != null
+        and regex(lower(object.process.cmdline), "launchctl.*?\/users\/(\w.*?)\/library\/launchagents\/com\.apple\..*?\.plist", 0) != null
         and object.process.fullpath == "/bin/launchctl"
         and event_src.title == "edr"
     }
