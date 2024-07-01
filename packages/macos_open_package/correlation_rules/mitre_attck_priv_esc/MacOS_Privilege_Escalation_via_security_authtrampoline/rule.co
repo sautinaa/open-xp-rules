@@ -1,6 +1,6 @@
 event Process_Start: 
     key:
-        event_src.host
+        event_src.host, datafield12
     filter {
         filter::NotFromCorrelator()
         and action == "execute"
@@ -15,7 +15,7 @@ event Process_Start:
 
 event Process_Security_Authtrampoline_Start:
     key:
-        event_src.host
+        event_src.host, datafield12
     filter {
         filter::NotFromCorrelator()
         and event_src.title == "edr"
