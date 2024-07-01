@@ -6,7 +6,7 @@ ExpertContext:
         - Sagatjkeee
     Usecases: []
     Falsepositives:
-        - Событие 4625 с типом входа - 2, может возникать при подключении через рдп, если в процессе сессии на удалёном хосте  была попытка запуска браузера с повышенными привилегиями (через "runas"), в случае, если введен неверный пароль или окно UAC закрывается (возникающее, например, при обновлении браузера). Тестировалось на браузерах Firefox и Chrome.
+        - Событие 4625 с типом входа - 2, может возникать при подключении через рдп, если в процессе сессии на удалённом хосте была попытка запуска браузера с повышенными привилегиями (через "runas"), в случае, если введен неверный пароль или окно UAC закрывается (возникающее, например, при обновлении браузера). Тестировалось на браузерах Firefox и Chrome.
     References:
         - https://learn.microsoft.com/en-us/windows-server/security/windows-authentication/windows-logon-scenarios#BKMK_InteractiveLogon
         - https://community.splunk.com/t5/All-Apps-and-Add-ons/EventCode-4625-LogonType-2-by-Google-Chrome/m-p/414012
