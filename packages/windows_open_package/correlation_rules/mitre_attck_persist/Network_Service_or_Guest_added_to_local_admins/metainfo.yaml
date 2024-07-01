@@ -21,7 +21,7 @@ EventDescriptions:
 ContentRelations:
     Implements:
         ATTACK:
-            persistent:
-                - T1078.001
+            persistence:
+                - T1098
             privilege-escalation:
-                - T1078.001
+                - T1098
