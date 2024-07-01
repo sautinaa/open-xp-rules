@@ -25,7 +25,7 @@ ObjectId: SEC-CR-135292989
 ContentRelations:
     Implements:
         ATTACK:
-            persistence:
+            privilege-escalation:
                 - T1548.002
 EventDescriptions:
     - Criteria: correlation_name = "UACBypass_via_SYSTEMROOT_environment"
