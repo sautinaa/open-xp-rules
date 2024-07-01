@@ -1,7 +1,7 @@
 ContentAutoName: UACBypass_via_SYSTEMROOT_environment
 ExpertContext:
     Created: 28.06.2024
-    Updated: 28.06.2024
+    Updated: 01.07.2024
     KnowledgeHolders:
         - driverenok
     Usecases:
@@ -14,11 +14,9 @@ ExpertContext:
     DataSources:
         - Provider: Microsoft-Windows-Security-Auditing
           EventID:
-              - 4688
               - 4657
         - Provider: Microsoft-Windows-Sysmon
           EventID:
-              - 1
               - 12
               - 13
 ObjectId: SEC-CR-135292989
