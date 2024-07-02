@@ -4,10 +4,10 @@
     filter {
         filter::NotFromCorrelator() and
         filter::ProcessStart_Windows_any() and
-        lower(object.account.privileges) == "high" and
+        in_list(["high", "tokenelevationtypefull", "tokenelevationtypedefault"], lower(subject.account.privileges)) and
         lower(object.process.name) == "mmc.exe" and
-        match(lower(object.process.parent.fullpath), "?:\\\\windows\\\\system32\\\\mmc.exe") != True and
-        match(lower(object.process.parent.fullpath), "?:\\\\\windows\syswow64\\\\mmc.exe") != True
+        not match(lower(object.process.parent.fullpath), "?:\\\\windows\\\\system32\\\\mmc.exe") and
+        not match(lower(object.process.parent.fullpath), "?:\\\\\windows\syswow64\\\\mmc.exe")
     }
 
 rule Start_mmc_exe_from_suspicious_binary_path: CreateProcess_mmc_eve_from_suspicious_binary_path
