@@ -21,3 +21,6 @@ ContentRelations:
         ATTACK:
             credential-access:
                 - T1110.001
+EventDescriptions:
+    - Criteria: correlation_name = "MacOS_Validate_Passwords_from_stdin"
+      LocalizationId: corrname_MacOS_Validate_Passwords_from_stdin
