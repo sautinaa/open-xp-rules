@@ -86,6 +86,6 @@ emit {
 
     $incident.severity = $importance
 
-    $incident.category = "ProtectionBypassing"
-    $incident.type = "MaUnauthorizedAccessfunction"
+    $incident.category = "UnauthorizedAccess"
+    $incident.type = "ProtectionBypassing"
 }
