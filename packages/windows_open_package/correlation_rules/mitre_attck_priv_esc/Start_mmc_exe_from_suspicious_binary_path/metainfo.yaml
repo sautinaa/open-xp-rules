@@ -21,8 +21,8 @@ ObjectId: SEC-CR-61536543
 ContentRelations:
     Implements:
         ATTACK:
-            privilege-escalation:
-                - T1548.002
+            defense-evasion:
+                - T1036.005
 EventDescriptions:
     - Criteria: correlation_name = "Start_mmc_exe_from_suspicious_binary_path"
       LocalizationId: corrname_Start_mmc_exe_from_suspicious_binary_path
