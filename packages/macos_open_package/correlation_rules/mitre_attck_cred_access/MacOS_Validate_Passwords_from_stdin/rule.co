@@ -21,7 +21,7 @@ event Sudo_stdin:
         and msgid == "9"
         and action == "execute"
         and lower(object.process.fullpath) == "/usr/bin/sudo"
-        and regex((object.process.cmdline), "sudo\s+-S", 0) != null
+        and regex((object.process.cmdline), "\s*sudo.+-S", 0) != null
     }
 
 rule MacOS_Validate_Passwords_from_stdin: (Process_Start* and Sudo_stdin+) timeout_timer 5s
@@ -198,7 +198,7 @@ rule MacOS_Validate_Passwords_from_stdin: (Process_Start* and Sudo_stdin+) timeo
         $datafield17 = datafield17
         $datafield18 = datafield18
 
-        $alert.key = regex(lower(object.process.cmdline), "sudo\s+-s", 0)
+        $alert.key = regex((object.process.cmdline), "\s*sudo.+-S", 0)
         $count.subevents = $count.subevents + 1
     }
 
