@@ -23,7 +23,7 @@ event Process_access_to_lsass:
 
 
 
-rule Invoke_Mimikatz_hosted_Github: Process_connection -> Process_access_to_lsass
+rule Invoke_Externally_Hosted_Mimikatz: Process_connection -> Process_access_to_lsass
 
     on Process_connection {
         $src.host = src.host

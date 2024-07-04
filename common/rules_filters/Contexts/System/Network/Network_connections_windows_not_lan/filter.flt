@@ -1,16 +1,5 @@
 filter Network_connections_windows_not_lan() {
-	(
-		(
-			msgid == "3"
-			and event_src.title == "sysmon"
-		)
-		or
-		(
-			msgid == "5156"
-			and event_src.title == "windows"
-		)
-	)
-
+	filter::Network_connections_windows()
 	and not (
 			in_subnet(dst.ip, "10.0.0.0/8") 
 			or in_subnet(dst.ip, "172.16.0.0/12") 
