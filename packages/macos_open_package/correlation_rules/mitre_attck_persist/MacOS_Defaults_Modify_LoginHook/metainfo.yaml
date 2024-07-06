@@ -1,7 +1,7 @@
-ContentAutoName: Modify_LoginHook
+ContentAutoName: MacOS_Defaults_Modify_LoginHook
 ExpertContext:
     Created: 18.06.2024
-    Updated: 18.06.2024
+    Updated: 26.06.2024
     KnowledgeHolders:
         - Sergey Golub <@leitosama>
     Usecases:
@@ -22,5 +22,5 @@ ContentRelations:
             persistence:
                 - T1037.002
 EventDescriptions:
-    - Criteria: correlation_name = "Modify_LoginHook"
-      LocalizationId: corrname_Modify_LoginHook
+    - Criteria: correlation_name = "MacOS_Defaults_Modify_LoginHook"
+      LocalizationId: corrname_MacOS_Defaults_Modify_LoginHook

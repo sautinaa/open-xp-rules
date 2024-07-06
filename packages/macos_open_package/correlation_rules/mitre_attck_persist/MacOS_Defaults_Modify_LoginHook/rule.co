@@ -10,7 +10,7 @@ event Defaults_Execution:
         and regex(object.process.cmdline, "^defaults\\b\\s(-currentHost\\s|-host\\s.+\\s|)write\\scom\\.apple\\.loginwindow\\s(LoginHook|LogoutHook)\\s(.+)$", 0) !=null
     }
 
-rule Modify_LoginHook: Defaults_Execution
+rule MacOS_Defaults_Modify_LoginHook: Defaults_Execution
 
     init {
         $labels = "w_auto"
