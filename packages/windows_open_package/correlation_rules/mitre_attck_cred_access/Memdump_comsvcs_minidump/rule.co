@@ -43,7 +43,7 @@ event Access_to_process:
         and object.process.name == "lsass.exe"    
     }
 
-rule Memdump_comsvc_minidump: ((Create_process_rundll -> Access_to_process) and Create_file?) timer 1m
+rule Memdump_comsvcs_minidump: ((Create_process_rundll -> Access_to_process) and Create_file?) timer 1m
 
 on Create_process_rundll {
     $event_src.ip = event_src.ip
