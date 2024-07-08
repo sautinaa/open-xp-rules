@@ -4,10 +4,12 @@ event HiddenFolderOrFileExecution:
     filter {
         filter::NotFromCorrelator()
         and action == "execute"
+        and object == "process"
+        and msgid == "9" 
         and regex(object.process.cmdline, "^\/.*?\/\.[^\.\/]", 0) != NULL
     }
 
-rule HiddenExecution: HiddenFolderOrFileExecution
+rule Hidden_File_or_Folder_Execution: HiddenFolderOrFileExecution
 
     on HiddenFolderOrFileExecution {
         $subject.account.name = subject.account.name
@@ -53,6 +55,7 @@ rule HiddenExecution: HiddenFolderOrFileExecution
 
 emit {  
     $correlation_type = "event"
+    $importance = "medium"
 
     $subject = "account" 
     $action = "start" 

@@ -1,4 +1,4 @@
-ContentAutoName: HiddenExecution
+ContentAutoName: Hidden_File_or_Folder_Execution
 ExpertContext:
     Created: 28.06.2024
     Updated: 08.07.2024
@@ -18,5 +18,5 @@ ContentRelations:
             defense-evasion:
                 - T1564.001
 EventDescriptions:
-    - Criteria: correlation_name = "HiddenExecution"
-      LocalizationId: corrname_HiddenExecution
+    - Criteria: correlation_name = "Hidden_File_or_Folder_Execution"
+      LocalizationId: corrname_Hidden_File_or_Folder_Execution
