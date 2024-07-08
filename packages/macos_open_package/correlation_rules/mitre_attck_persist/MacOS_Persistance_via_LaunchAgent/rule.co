@@ -10,7 +10,7 @@ event LAgent_CVE:
         and event_src.title == "edr"
     }
 
-rule Persistance_via_LaunchAgent: LAgent_CVE within 30s
+rule MacOS_Persistance_via_LaunchAgent: LAgent_CVE within 30s
 
     on LAgent_CVE {
         
@@ -82,6 +82,8 @@ rule Persistance_via_LaunchAgent: LAgent_CVE within 30s
         $object.process.parent.path = object.process.parent.path
         $object.process.parent.fullpath = object.process.parent.fullpath
         $object.process.parent.cmdline = object.process.parent.cmdline
+
+        $object.name = regex(lower(object.process.cmdline), "launchctl.*?\/users\/\w.*?\/library\/launchagents\/(com\.apple\..*?\.plist)", 1)
         
         $datafield18 = datafield18  # Цепочка процесса-субъекта с идентификаторами
         $datafield19 = datafield19  # Цепочка процесса-объекта с идентификаторами
@@ -112,8 +114,11 @@ rule Persistance_via_LaunchAgent: LAgent_CVE within 30s
         $importance = "high"
         
         $subject = "account"
-        $action = "access"
-        $object = "account"
+        $action = "execute"
+        $object = "process"
         $status = "success"
 
+        $category.generic = "Attack"
+        $category.high = "Persistence"
+        $category.low = "Create or Modify System Process: Launch Agent"
     }
