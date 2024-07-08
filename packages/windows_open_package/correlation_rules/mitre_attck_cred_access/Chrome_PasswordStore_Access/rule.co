@@ -4,20 +4,12 @@ event User_Login_or_Fail:
     filter {
         filter::NotFromCorrelator()
         and event_src.title == "windows"
-        #and msgid == "4624"
         and in_list(["4624", "4625"], msgid)
         and logon_type == 2
         and subject.process.name == "chrome.exe"
-        # and filter::LoginAttempt_Windows_Endpoint()
-        
-        #and filter::CheckWL_Windows_Login("CA_4624_4625_LogonType2_LogonProc_chrome")
     }
 
-rule CA_4624_4625_LogonType2_LogonProc_chrome: User_Login_or_Fail
-
-    #init {
-        #$labels = "w_auto|CheckWL_Windows_Login"
-    #}
+rule Chrome_PasswordStore_Access: User_Login_or_Fail
 
     on User_Login_or_Fail {
         $status = status
@@ -76,17 +68,12 @@ emit {
     $correlation_type = "event"
 
     $subject = "account"
-    $action = "login"
-    $object = "system"
+    $action = "access"
+    $object = "database"
 
-    $importance = "low"
+    $importance = "info"
 
     $category.generic = "Attack"
-    $category.high = ""
-    $category.low = ""
-
-    $incident.aggregation.key = join([$correlation_name, $subject.account.name], "|")
-    $incident.severity = $importance
-    $incident.category = "Undefined"
-    $incident.aggregation.timeout = 1h
+    $category.high = "Credential Access"
+    $category.low = "Credentials from Password Stores: Credentials from Web Browsers"
 }

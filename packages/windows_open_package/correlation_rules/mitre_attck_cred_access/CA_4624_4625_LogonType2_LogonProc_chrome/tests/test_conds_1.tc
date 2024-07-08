@@ -1,3 +1,0 @@
-# test comment
-table_list default
-expect 1 {"correlation_name":"CA_4624_4625_LogonType2_LogonProc_chrome"}
