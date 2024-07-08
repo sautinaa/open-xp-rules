@@ -20,6 +20,7 @@ event Do_Shell_Script_Execute:
         and event_src.title == "edr"
         and msgid == "9"
         and action == "execute"
+        and object.process.fullpath == "/usr/bin/osascript"
         and regex(lower(object.process.cmdline), "do\s+shell\s+script.*with\s+administrator\s+privileges\s*(password\s+.*)?", 0) != null
     }
 
