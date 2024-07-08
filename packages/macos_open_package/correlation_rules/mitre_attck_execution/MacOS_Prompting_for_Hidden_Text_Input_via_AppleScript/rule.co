@@ -20,6 +20,7 @@ event AppleScript_Execute:
         and event_src.title == "edr"
         and msgid == "9"
         and action == "execute"
+        and object.process.fullpath == "/usr/bin/osascript"
         and regex(lower(object.process.cmdline), "(set\s+popup\s+to\s+)?display\s+dialog.+with\s+hidden\s+answer", 0) != null
     }
 
