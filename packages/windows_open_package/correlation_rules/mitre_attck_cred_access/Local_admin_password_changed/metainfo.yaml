@@ -1,7 +1,7 @@
 ContentAutoName: Local_admin_password_changed
 ExpertContext:
     Created: 07.07.2024
-    Updated: 07.07.2024
+    Updated: 08.07.2024
     KnowledgeHolders:
         - d3f0x0 (Vadim Varganov)
     Usecases:
@@ -19,3 +19,10 @@ ObjectId: SEC-CR-161268809
 EventDescriptions:
     - Criteria: correlation_name = "Local_admin_password_changed"
       LocalizationId: corrname_Local_admin_password_changed
+ContentRelations:
+    Implements:
+        ATTACK:
+            persistence:
+                - T1098
+            privilege-escalation:
+                - T1098
