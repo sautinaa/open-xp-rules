@@ -70,11 +70,10 @@ rule Silent_Process_Exit_Monitor_and_Image_Hijack: Windows_Registry_globalflag_V
         $event_src.subsys = event_src.subsys
         $event_src.category = event_src.category
 
-        $datafield18 = datafield18 # chain with PID for subject
-        $datafield19 = datafield19 # chain with PID for object
+        $datafield1 = regex(lower(object.fullpath), "\\\\silentprocessexit\\\\(.*)\\\\monitorprocess", 1)
 
         $alert.key = lower(join([object.fullpath, object.new_value], "|"))
-        $alert.context = object.name
+        $alert.context = regex(lower(object.fullpath), "\\\\silentprocessexit\\\\(.*)\\\\monitorprocess", 1)
         # $alert.regex_match = 
     }
 
