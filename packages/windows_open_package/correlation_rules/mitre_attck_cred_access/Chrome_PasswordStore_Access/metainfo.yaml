@@ -20,8 +20,10 @@ ExpertContext:
               - 4625
 ObjectId: SEC-CR-575668016
 EventDescriptions:
-    - Criteria: correlation_name = "Chrome_PasswordStore_Access"
+    - Criteria: correlation_name = "Chrome_PasswordStore_Access" and status = "success"
       LocalizationId: corrname_Chrome_PasswordStore_Access
+    - Criteria: correlation_name = "Chrome_PasswordStore_Access" and status = "failure"
+      LocalizationId: corrname_Chrome_PasswordStore_Access_2
 ContentRelations:
     Implements:
         ATTACK:
