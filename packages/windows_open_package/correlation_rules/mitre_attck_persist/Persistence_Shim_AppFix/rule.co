@@ -4,7 +4,7 @@ event CreateProcess_sdbinst:
     filter {
         filter::NotFromCorrelator() and
         filter::ProcessStart_Windows_any() and
-        lower(object.account.privileges) == "high" and
+        in_list(["high", "tokenelevationtypefull", "tokenelevationtypedefault"], lower(subject.account.privileges)) and
         lower(object.process.name) == "sdbinst.exe"
     }
 
