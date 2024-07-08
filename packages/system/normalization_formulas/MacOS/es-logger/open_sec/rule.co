@@ -4,7 +4,7 @@ event PT_Positive_Technologies_XDR_es_logger_task_read_port_retrieval:
     filter {
         filter::NotFromCorrelator()
         and action == "execute"
-        and find_substr(object.process.cmdline, "/.") != Null
+        and regex(object.process.cmdline, "^.*\/\.[^\/]+.*$", 0) != NULL
     }
 
 rule open_sec: PT_Positive_Technologies_XDR_es_logger_task_read_port_retrieval
