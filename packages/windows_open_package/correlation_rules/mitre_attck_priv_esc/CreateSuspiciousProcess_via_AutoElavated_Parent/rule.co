@@ -7,6 +7,7 @@ event CreateProcess_with_AutoElavated_Parent:
         event_src.host
     filter {
         filter::NotFromCorrelator() and
+        filter::ProcessStart_Windows_any() and
         exec_query("CheckProcessInAutoElevatedList", [lower(object.process.parent.name)]) and
         in_list(["high", "tokenelevationtypefull", "tokenelevationtypedefault"], lower(subject.account.privileges)) and
         not match(lower(object.process.parent.fullpath), "?:\\\\windows\\\\system32\\\\mmc.exe") and
