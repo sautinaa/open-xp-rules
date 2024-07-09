@@ -1,0 +1,13 @@
+event Unix_Recon:
+key:
+        event_src.host
+    filter {
+        filter::NotFromCorrelator()
+        and object.process.fullpath == "/usr/sbin/system_profiler"
+        and action == execute
+        and normalized == true
+        and object.process.cmdline == regex("/usr/sbin/system_profiler -nospawn -xml SP.[A-Za-z]DataType -detailLevel full")}
+
+rule Unix_recon_SP_Data_type: (Unix_Recon[6,]) within 1m
+
+    on Unix_Recon
