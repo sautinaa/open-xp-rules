@@ -111,7 +111,7 @@ emit {
 
     $category.generic = "Attack"
     $category.high = "Credential Access"
-    $category.low = "Input Capture: GUI Input Capture "
+    $category.low = "Input Capture: GUI Input Capture"
 
     $incident.aggregation.key = join([$correlation_name, lower($event_src.host), lower($subject.account.id)], "|")
     $incident.severity = $importance
