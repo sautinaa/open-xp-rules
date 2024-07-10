@@ -3,7 +3,7 @@ ExpertContext:
     Created: 08.07.2024
     Updated: 10.07.2024
     KnowledgeHolders:
-        - Kirill SHamko
+        - Kirill Shamko
     Usecases:
         - Правило детектирует AppleScript скрипт на вызов формы для ввода учетных данных
     Falsepositives: []
