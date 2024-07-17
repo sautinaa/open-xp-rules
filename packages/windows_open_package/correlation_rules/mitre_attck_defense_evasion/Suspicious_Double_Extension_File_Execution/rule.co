@@ -4,7 +4,7 @@ event CreateProcess_with_DoubleFileExtension:
     filter {
         filter::NotFromCorrelator()
         and filter::ProcessStart_Windows_any()
-        and regex(lower(object.process.name), "\.(doc|docx|docm|dot|htm|html|odt|pdf|rtf|txt|xml|csv|xls|xlsx|xlsm|zip|zipx|rar|jar|tar|tar-gz|tgz|gz|gzip|7z|pps|ppsx|ppt|pptm|pptx|jpg|jpeg|gif|png|gif|bmp|raw|tiff|psd|heif|mp4|mov|wmv|avi|flv|swf|mkv)\.(exe|scr|com|js|vbs|vbe|lnk|bat|wsh|ps1|hta)$", 0) != null
+        and regex(lower(object.process.name), "\.(doc|docx|docm|dot|htm|html|odt|pdf|rtf|txt|xml|csv|xls|xlsx|xlsm|zip|zipx|rar|jar|tar|tar-gz|tgz|gz|gzip|7z|pps|ppsx|ppt|pptm|pptx|jpg|jpeg|gif|png|gif|bmp|raw|tiff|psd|heif|mp4|mov|wmv|avi|flv|swf|mkv)\.(exe|scr|com)$", 0) != null
     }
 
 event CreateProcess_withParent_DoubleFileExtension:
@@ -13,7 +13,7 @@ event CreateProcess_withParent_DoubleFileExtension:
     filter {
         filter::NotFromCorrelator()
         and filter::ProcessStart_Windows_any()
-        and regex(lower(object.process.parent.name), "\.(doc|docx|docm|dot|htm|html|odt|pdf|rtf|txt|xml|csv|xls|xlsx|xlsm|zip|zipx|rar|jar|tar|tar-gz|tgz|gz|gzip|7z|pps|ppsx|ppt|pptm|pptx|jpg|jpeg|gif|png|gif|bmp|raw|tiff|psd|heif|mp4|mov|wmv|avi|flv|swf|mkv)\.(exe|scr|com|js|vbs|vbe|lnk|bat|wsh|ps1|hta)$", 0) != null
+        and regex(lower(object.process.parent.name), "\.(doc|docx|docm|dot|htm|html|odt|pdf|rtf|txt|xml|csv|xls|xlsx|xlsm|zip|zipx|rar|jar|tar|tar-gz|tgz|gz|gzip|7z|pps|ppsx|ppt|pptm|pptx|jpg|jpeg|gif|png|gif|bmp|raw|tiff|psd|heif|mp4|mov|wmv|avi|flv|swf|mkv)\.(exe|scr|com)$", 0) != null
     }
 
 rule Suspicious_Double_Extension_File_Execution: CreateProcess_with_DoubleFileExtension or CreateProcess_withParent_DoubleFileExtension
