@@ -76,8 +76,6 @@ rule Suspicious_Double_Extension_File_Execution: CreateProcess_with_DoubleFileEx
         $event_src.subsys = event_src.subsys
         $event_src.category = event_src.category
 
-        $msgid = msgid
-
         $reason = "ChildDoubleExtension"
     }
 
@@ -138,8 +136,6 @@ rule Suspicious_Double_Extension_File_Execution: CreateProcess_with_DoubleFileEx
         $event_src.title = event_src.title
         $event_src.subsys = event_src.subsys
         $event_src.category = event_src.category
-
-        $msgid = msgid
 
         $reason = "ParentDoubleExtension"
     }
