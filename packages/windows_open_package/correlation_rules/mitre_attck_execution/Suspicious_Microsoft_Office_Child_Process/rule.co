@@ -67,8 +67,6 @@ rule Suspicious_Microsoft_Office_Child_Process: CreateProcess_via_MSOffice
         $event_src.title = event_src.title
         $event_src.subsys = event_src.subsys
         $event_src.category = event_src.category
-
-        $msgid = msgid
     }
 
 emit {
