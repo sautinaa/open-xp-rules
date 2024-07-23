@@ -11,7 +11,7 @@ event CreateProcess_with_AutoElavated_Parent:
         exec_query("CheckProcessInAutoElevatedList", [lower(object.process.parent.name)]) and
         in_list(["high", "tokenelevationtypefull", "tokenelevationtypedefault"], lower(subject.account.privileges)) and
         not match(lower(object.process.parent.fullpath), "?:\\\\windows\\\\system32\\\\mmc.exe") and
-        not match(lower(object.process.parent.fullpath), "?:\\\\\windows\syswow64\\\\mmc.exe")
+        not match(lower(object.process.parent.fullpath), "?:\\\\windows\\\\syswow64\\\\mmc.exe")
     }
 
 rule CreateSuspiciousProcess_via_AutoElavated_Parent: CreateProcess_with_AutoElavated_Parent
