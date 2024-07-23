@@ -1,7 +1,7 @@
 ContentAutoName: Suspicious_Double_Extension_File_Execution
 ExpertContext:
     Created: 16.07.2024
-    Updated: 16.07.2024
+    Updated: 23.07.2024
     KnowledgeHolders:
         - driverenok
     Usecases:
@@ -27,8 +27,6 @@ ContentRelations:
         ATTACK:
             defense-evasion:
                 - T1036.007
-            initial-access:
-                - T1566.001
 EventDescriptions:
     - Criteria: correlation_name = "Suspicious_Double_Extension_File_Execution" and reason = "ChildDoubleExtension"
       LocalizationId: corrname_Suspicious_Double_Extension_File_Execution
