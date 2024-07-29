@@ -66,12 +66,9 @@ rule Suspicious_Messanger_Child_Process: CreateProcess_via_Messanger
         $event_src.title = event_src.title
         $event_src.subsys = event_src.subsys
         $event_src.category = event_src.category
-
-        $msgid = msgid
     }
 
 emit {
-    $correlation_name = "Suspicious_Messanger_Child_Process"
     $correlation_type = "incident"
 
     $importance = "medium"
