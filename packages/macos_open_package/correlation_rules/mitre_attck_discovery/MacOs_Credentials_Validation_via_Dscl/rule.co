@@ -11,7 +11,7 @@ event PasswordValidation_Via_Dscl_Event:
     }
 
 
-rule MacOs_Credentials_Validation_via_Dscl: PasswordValidation_Via_Dscl_Event
+rule MacOS_Credentials_Validation_via_Dscl: PasswordValidation_Via_Dscl_Event
 
     init {
         $labels = "w_auto"
