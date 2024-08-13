@@ -13,6 +13,7 @@
     "object.account.domain": "MSEDGEWIN10",
     "object.account.fullname": "MSEDGEWIN10\\IEUser",
     "object.account.name": "IEUser",
+    "object.id": "3774C88F-94AD-4FC0-A559-EA76B5D829D6",
     "object.name": "C:\\Users\\IEUser\\AppData\\Local\\Temp\\{259DDBBE-DDD3-4590-8A2C-60211631093C}-GoogleUpdateSetup.exe",
     "status": "success",
     "time": "2021-03-15T18:55:51.612Z"

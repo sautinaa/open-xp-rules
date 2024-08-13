@@ -10,6 +10,7 @@ object.name = $Data["jobTitle"] # Job name
 object.account.fullname = $Data["User"]
 object.account.name = csv(object.account.fullname, "\\", "")[1]
 object.account.domain = csv(object.account.fullname, "\\", "")[0]
+object.id = $Data["jobId"]
 
 count.bytes = $Data["bytesTransferred"]
 

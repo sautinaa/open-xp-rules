@@ -16,6 +16,8 @@ $process_name = csv(object.process.fullpath, "\\", "")
 object.process.name = $process_name[length($process_name) - 1] 
 object.process.id = $Data["processId"]
 
+object.id = $Data["jobId"]
+
 time = $TimeCreated["SystemTime"]
 
 msgid = $EventID

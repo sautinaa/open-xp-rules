@@ -8,6 +8,7 @@ status = "success"
 object.name = $Data["name"] # Job name
 object.path = $Data["url"]
 object.value = $Data["fileLength"]
+object.id = $Data["Id"]
 
 $domain = csv(object.path, "/", "")[2]
 dst.fqdn = lower($domain)
