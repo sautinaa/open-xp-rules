@@ -5,7 +5,7 @@ COND = lower($Channel)=="security" and $Provider["Name"]=="Microsoft-Windows-Sec
 
 subject = "account"
 action = "modify"
-object = "account"
+object = "configuration"
 
 if $Keywords == "0x8020000000000000" then
 status = "success"
