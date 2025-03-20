@@ -5,7 +5,7 @@ COND = lower($Channel)=="security" and $Provider["Name"]=="Microsoft-Windows-Sec
 
 subject = "account"
 action = "modify"
-object = "configuration"
+object = "account"
 
 if $Keywords == "0x8020000000000000" then
 status = "success"
@@ -55,12 +55,3 @@ endif
 event_src.category = "Directory service"
 
 id = "PT_Microsoft_Windows_eventlog_4794_Attempt_was_made_to_set_DSRM_admin_password"
-
-# -- DEPRECATED --
-# lines from here will be deleted in future releases
-
-subject.id = subject.account.id
-subject.name = subject.account.name
-subject.domain = subject.account.domain
-
-datafield1 = subject.account.session_id    # ID сессии
