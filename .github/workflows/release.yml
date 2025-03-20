@@ -42,6 +42,7 @@ jobs:
 
     - name: Package Open
       run: |
+        mkdir -p ${{ env.TEMP_DIR }}
         chmod +x ./.github/scripts/filter_open_content.sh
         ./.github/scripts/filter_open_content.sh $GITHUB_WORKSPACE
         OPEN_PACKAGE_NAME="pack.open.${{ env.KBT_VERSION }}.kb"
