@@ -1,0 +1,4 @@
+Description: 'Подозрительная команда wmic'
+EventDescriptions:
+  - LocalizationId: 'corrname_Suspicious_wmic_command_07_03'
+    EventDescription: 'Процесс {object.process.name} выполнил подозрительный метод {datafield20} на узле {event_src.host}'
