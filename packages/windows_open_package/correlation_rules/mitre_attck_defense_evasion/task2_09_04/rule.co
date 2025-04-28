@@ -1,0 +1,67 @@
+event Sysmon_ProcessCreate:
+    key:
+        event_src.host
+    filter {
+         #filter::NotFromCorrelator() and
+        event_src.title == "sysmon"
+        and msgid == "1"
+        and action == "start"
+        and object.process.name == "powershell.exe"
+        and object.process.cmdline != null
+        and regex(lower(object.process.cmdline), "amsienable", 0) != null
+        and regex(lower(object.process.cmdline), "hkcu\\\\software\\\\microsoft\\\\windows script\\\\settings", 0) != null
+        and regex(lower(object.process.cmdline), "reg add", 0) != null
+    }
+
+rule task2_09_04: Sysmon_ProcessCreate
+
+    init {
+        $labels = "amsi_bypass|sysmon_creation"
+    }
+
+    on Sysmon_ProcessCreate {
+        $action = action
+        $object = object
+
+        $subject.account.name = subject.account.name
+        $subject.account.domain = subject.account.domain
+        $subject.account.id = subject.account.id
+        $subject.account.privileges = subject.account.privileges
+        $subject.account.session_id = subject.account.session_id
+
+        $object.process.id = object.process.id
+        $object.process.name = object.process.name
+        $object.process.path = object.process.path
+        $object.process.fullpath = object.process.fullpath
+        $object.process.cmdline = object.process.cmdline
+        $object.process.guid = object.process.guid
+
+        $object.process.parent.id = object.process.parent.id
+        $object.process.parent.name = object.process.parent.name
+        $object.process.parent.cmdline = object.process.parent.cmdline
+        $object.process.parent.guid = object.process.parent.guid
+
+        $event_src.hostname = event_src.hostname
+        $event_src.fqdn = event_src.fqdn
+        $event_src.host = event_src.host
+        $event_src.vendor = event_src.vendor
+        $event_src.title = event_src.title
+        $event_src.subsys = event_src.subsys
+    }
+
+emit {
+    $correlation_type = "event"
+
+    $subject = "process"
+    $status = "success"
+
+    $importance = "high"
+
+    $category.generic = "Attack"
+    $category.high = "Execution"
+    $category.low = "Defense Evasion"
+
+    $incident.aggregation.key = join([$correlation_name, $event_src.host, $subject.account.id, $subject.account.name], "|")
+    $incident.severity = $importance
+    $incident.aggregation.timeout = 2h
+}

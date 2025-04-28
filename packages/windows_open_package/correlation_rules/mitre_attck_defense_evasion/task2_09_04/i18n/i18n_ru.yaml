@@ -1,0 +1,4 @@
+Description: 'Обнаружено использование PowerShell для изменения настроек реестра "AmsiEnable" в "HKCU\Software\Microsoft\Windows Script\Settings", что может свидетельствовать о попытке обхода AMSI (Антивирусного скриптового интерфейса).'
+EventDescriptions:
+  - LocalizationId: 'corrname_task2_09_04'
+    EventDescription: 'На хосте {event_src.hostname} обнаружено использование PowerShell {object.process.name} для изменения параметра реестра "AmsiEnable" в "HKCU\Software\Microsoft\Windows Script\Settings". Это может свидетельствовать о попытке обхода AMSI.'

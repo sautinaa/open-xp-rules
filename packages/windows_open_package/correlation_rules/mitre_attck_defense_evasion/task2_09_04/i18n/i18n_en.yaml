@@ -1,0 +1,4 @@
+Description: 'Detected usage of PowerShell to modify the registry setting "AmsiEnable" under "HKCU\Software\Microsoft\Windows Script\Settings", indicating a possible attempt to bypass AMSI (Antimalware Scan Interface).'
+EventDescriptions:
+  - LocalizationId: 'corrname_task2_09_04'
+    EventDescription: 'On host {event_src.hostname}, PowerShell {object.process.name} was used to modify the registry key "AmsiEnable" under "HKCU\Software\Microsoft\Windows Script\Settings". This may indicate an attempt to bypass AMSI.'
