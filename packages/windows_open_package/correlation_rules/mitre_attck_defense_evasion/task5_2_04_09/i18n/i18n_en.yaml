@@ -1,0 +1,4 @@
+Description: 'Modification of LSA secrets in the registry key HKLM\SECURITY\Policy\Secrets\$MACHINE.ACC detected. The lsass.exe process (responsible for credential management) altered binary data, which may indicate domain password hash extraction or cached credential theft.'
+EventDescriptions:
+  - LocalizationId: 'corrname_task5_2_04_09'
+    EventDescription: 'The process {subject.process.name} creates and modifies {object} on the {event_src.hostname} node'

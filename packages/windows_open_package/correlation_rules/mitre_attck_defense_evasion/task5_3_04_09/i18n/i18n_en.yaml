@@ -1,0 +1,4 @@
+Description: 'Suspicious modification of IEAK Group Policy settings detected in the registry key HKLM\SOFTWARE\Microsoft\IEAK\GroupPolicy\PendingGpos. Setting values like DefaultInstall, gpo.inf, and Count=1 may indicate malicious GPO injection via Internet Explorer Administration Kit (IEAK) to distribute browser configurations or execute arbitrary code.'
+EventDescriptions:
+  - LocalizationId: 'corrname_task5_3_04_09'
+    EventDescription: 'The process {subject.process.name} changed the path to the group policy file value in {object.path}'

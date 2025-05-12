@@ -1,0 +1,4 @@
+Description: 'Suspicious modification of COM object registry keys detected (InprocServer, InprocServer32, LocalServer, LocalServer32, etc.). These changes may indicate COM hijacking to inject malicious code, establish persistence, or execute arbitrary commands.'
+EventDescriptions:
+  - LocalizationId: 'corrname_task5_4_04_09'
+    EventDescription: 'The registry key value {object.fullpath} has been changed to {object.new_value} on the {event_src.host} node'
