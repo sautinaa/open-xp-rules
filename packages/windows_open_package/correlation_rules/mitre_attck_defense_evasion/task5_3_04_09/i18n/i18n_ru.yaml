@@ -1,0 +1,4 @@
+Description: 'Обнаружено подозрительное изменение параметров групповых политик IEAK в ветке реестра HKLM\SOFTWARE\Microsoft\IEAK\GroupPolicy\PendingGpos. Установка значений DefaultInstall, gpo.inf и Count=1 может указывать на попытку внедрения вредоносных групповых политик через Internet Explorer Administration Kit (IEAK) для распространения настроек браузера или выполнения произвольного кода.'
+EventDescriptions:
+  - LocalizationId: 'corrname_task5_3_04_09'
+    EventDescription: 'Процесс {subject.process.name} изменил путь до файла групповой политики значение в {object.path}'

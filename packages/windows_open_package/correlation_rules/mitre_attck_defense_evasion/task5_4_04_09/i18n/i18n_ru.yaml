@@ -1,0 +1,4 @@
+Description: 'Обнаружено подозрительное изменение ключей COM-объектов в реестре (InprocServer, InprocServer32, LocalServer, LocalServer32 и др.). Модификация этих параметров может указывать на перехват COM-объектов для внедрения вредоносного кода, создания персистенции или выполнения произвольных команд.'
+EventDescriptions:
+  - LocalizationId: 'corrname_task5_4_04_09'
+    EventDescription: 'Значение ключ реестра {object.fullpath} имзенено на {object.new_value} на узле {event_src.host}'

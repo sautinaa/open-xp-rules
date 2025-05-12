@@ -1,0 +1,4 @@
+Description: 'Обнаружена попытка доступа к процессу TeamViewer.exe с правами 0x147a (полный доступ к процессу). Исходный процесс запущен из временных каталогов пользователя (Users или AppData\Local\Temp), тогда как целевой процесс расположен в системных директориях (Program Files или ProgramData)'
+EventDescriptions:
+  - LocalizationId: 'corrname_task5_1_04_09'
+    EventDescription: 'Процесс {object.process.name} выполнил инъекцию кода в процесс {object.process.name} на узле {event_src.host}'

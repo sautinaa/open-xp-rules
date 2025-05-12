@@ -1,0 +1,4 @@
+Description: 'An attempt to access the TeamViewer.exe process with 0x147a privileges (full process access) was detected. The source process originated from user temporary directories (Users or AppData\Local\Temp), while the target process is located in system directories (Program Files or ProgramData).'
+EventDescriptions:
+  - LocalizationId: 'corrname_task5_1_04_09'
+    EventDescription: 'The process {object.process.name} injected code into the process {object.process.name} on the {event_src.host} node'

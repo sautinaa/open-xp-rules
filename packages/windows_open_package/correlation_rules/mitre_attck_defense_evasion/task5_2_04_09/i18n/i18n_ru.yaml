@@ -1,0 +1,4 @@
+Description: 'Обнаружено изменение секретов LSA в ветке реестра HKLM\SECURITY\Policy\Secrets\$MACHINE.ACC. Процесс lsass.exe (ответственный за управление учетными данными) изменил бинарные данные, что может указывать на попытку извлечения хэшей паролей домена или кэшированных учетных данных.'
+EventDescriptions:
+  - LocalizationId: 'corrname_task5_2_04_09'
+    EventDescription: 'Процесс {subject.process.name} создает и изменяет {object} на узле {event_src.hostname}'
