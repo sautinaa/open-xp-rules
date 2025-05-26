@@ -1,0 +1,26 @@
+ContentAutoName: task6_3_04_09
+ExpertContext:
+  Created: 22.05.2025
+  Updated: 26.05.2025
+  KnowledgeHolders:
+    - '[06_04]'
+  Usecases: []
+  Falsepositives: []
+  References:
+    - https://attack.mitre.org/techniques/T1055/
+  Improvements: []
+  DataSources:
+    - Provider: Microsoft-Windows-Sysmon
+      EventID:
+        - 10
+ObjectId: SEC-CR-822455582
+ContentRelations:
+  Implements:
+    ATTACK:
+      defense-evasion:
+        - T1055
+      privilege-escalation:
+        - T1055
+EventDescriptions:
+  - Criteria: correlation_name = "task6_3_04_09"
+    LocalizationId: corrname_task6_3_04_09

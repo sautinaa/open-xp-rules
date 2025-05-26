@@ -1,0 +1,4 @@
+Description: 'The rule detects an attempt to execute various applications multiple times from a non-system directory'
+EventDescriptions:
+  - LocalizationId: 'corrname_task6_3_04_09'
+    EventDescription: 'Process {subject.process.fullpath} tried to make multiple calls to various applications from the system directory on the {event_src.host} node'

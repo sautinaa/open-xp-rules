@@ -1,0 +1,4 @@
+Description: 'Suspicious path to the executable file from which the process that changed the registry value was started'
+EventDescriptions:
+  - LocalizationId: 'corrname_task6_2_04_09'
+    EventDescription: 'Process {subject.process.fullpath} made changes in the registry branch {object.path} on the {event_src.host} host'

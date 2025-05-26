@@ -1,0 +1,4 @@
+Description: 'Подозрительный путь к исполняемому файлу, из которого был запущен процесс, внёсший изменение в значение реестра'
+EventDescriptions:
+  - LocalizationId: 'corrname_task6_2_04_09'
+    EventDescription: 'Процесс {subject.process.fullpath} внес изменения в ветке реестра {object.path} на хосте {event_src.host}'

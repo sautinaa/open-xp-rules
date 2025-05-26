@@ -1,0 +1,13 @@
+ContentAutoName: task6_2_04_09
+ExpertContext:
+  Created: 16.05.2025
+  Updated: 26.05.2025
+  KnowledgeHolders:
+    - '07_03'
+  Usecases: []
+  Falsepositives: []
+  References: []
+  Improvements: []
+EventDescriptions:
+  - Criteria: correlation_name = "task6_2_04_09"
+    LocalizationId: corrname_task6_2_04_09
