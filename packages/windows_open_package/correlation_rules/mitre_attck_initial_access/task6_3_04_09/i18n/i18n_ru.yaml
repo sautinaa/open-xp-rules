@@ -1,0 +1,4 @@
+Description: 'Правило детектирует попытку многократного выполнения различных приложений из несистемной директории'
+EventDescriptions:
+  - LocalizationId: 'corrname_task6_3_04_09'
+    EventDescription: 'Процесс {subject.process.fullpath} попытался выполнить многократный вызов различных приложений из несистемной директории  на узле {event_src.host}'
